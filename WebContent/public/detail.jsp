@@ -41,4 +41,10 @@
   </div>
   <div class="clr"></div>
 </div>
+<script>
+	<%if(itemSong!=null){%>
+    	document.getElementById("<%=itemSong.getItemCat().getIdCat()%>").classList.add('active_cat');
+	<%}%>
+	document.getElementById("home").classList.add('active');
+</script>
 <%@ include file="/templates/public/inc/footer.jsp" %>

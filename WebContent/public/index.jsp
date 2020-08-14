@@ -42,4 +42,7 @@
   </div>
   <div class="clr"></div>
 </div>
+<script>
+   	document.getElementById("home").classList.add('active');
+</script>
 <%@ include file="/templates/public/inc/footer.jsp" %>

@@ -54,5 +54,6 @@
 	<%if(itemCat!=null){%>
     	document.getElementById("<%=itemCat.getIdCat()%>").classList.add('active_cat');
 	<%}%>
+	document.getElementById("home").classList.add('active');
 </script>
 <%@ include file="/templates/public/inc/footer.jsp" %>
