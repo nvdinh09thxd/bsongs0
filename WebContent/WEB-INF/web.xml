@@ -44,4 +44,44 @@
     <servlet-name>PublicContactController</servlet-name>
     <url-pattern>/contact</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminIndexController</servlet-name>
+    <servlet-class>controller.AdminIndexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexController</servlet-name>
+    <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminIndexCatController</servlet-name>
+    <servlet-class>controller.AdminIndexCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexCatController</servlet-name>
+    <url-pattern>/admin/cats</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminAddCatController</servlet-name>
+    <servlet-class>controller.AdminAddCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminAddCatController</servlet-name>
+    <url-pattern>/admin/cat/add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminEditCatController</servlet-name>
+    <servlet-class>controller.AdminEditCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminEditCatController</servlet-name>
+    <url-pattern>/admin/cat/edit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminDeleteCatController</servlet-name>
+    <servlet-class>controller.AdminDeleteCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDeleteCatController</servlet-name>
+    <url-pattern>/admin/cat/del</url-pattern>
+  </servlet-mapping>
 </web-app>
