@@ -14,21 +14,23 @@ import model.dao.CatDao;
 
 public class AdminIndexCatController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public AdminIndexCatController() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public AdminIndexCatController() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		ArrayList<Category> listItems = CatDao.getItems();
 		request.setAttribute("listCat", listItems);
-		
+
 		RequestDispatcher rd = request.getRequestDispatcher("/admin/cat/index.jsp");
 		rd.forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 	}
 
 }

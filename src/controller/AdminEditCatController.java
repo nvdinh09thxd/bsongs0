@@ -13,12 +13,13 @@ import model.dao.CatDao;
 
 public class AdminEditCatController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public AdminEditCatController() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public AdminEditCatController() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		Category itemCat = CatDao.getItem(id);
 		request.setAttribute("itemCat", itemCat);
@@ -26,7 +27,8 @@ public class AdminEditCatController extends HttpServlet {
 		rd.forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		int id = Integer.parseInt(request.getParameter("id"));

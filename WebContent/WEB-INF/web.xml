@@ -5,46 +5,6 @@
     <welcome-file>index</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>PublicIndexController</servlet-name>
-    <servlet-class>controller.PublicIndexController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>PublicIndexController</servlet-name>
-    <url-pattern>/index</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>PublicCatController</servlet-name>
-    <servlet-class>controller.PublicCatController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>PublicCatController</servlet-name>
-    <url-pattern>/cat</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>PublicNotFoundController</servlet-name>
-    <servlet-class>controller.PublicNotFoundController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>PublicNotFoundController</servlet-name>
-    <url-pattern>/404</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>PublicDetailController</servlet-name>
-    <servlet-class>controller.PublicDetailController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>PublicDetailController</servlet-name>
-    <url-pattern>/detail</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>PublicContactController</servlet-name>
-    <servlet-class>controller.PublicContactController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>PublicContactController</servlet-name>
-    <url-pattern>/contact</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>AdminIndexController</servlet-name>
     <servlet-class>controller.AdminIndexController</servlet-class>
   </servlet>
