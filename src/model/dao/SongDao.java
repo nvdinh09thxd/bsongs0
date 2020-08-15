@@ -16,7 +16,7 @@ public class SongDao {
 	private static Statement st;
 	private static PreparedStatement pst;
 	private static ResultSet rs;
-	
+
 	public static ArrayList<Song> getItems() {
 		conn = DBConnectionUtil.getConnection();
 		String sql = "SELECT s.*, c.name AS cname FROM songs s JOIN categories c ON s.cat_id = c.id ORDER BY id DESC";
@@ -37,71 +37,7 @@ public class SongDao {
 		}
 		return listItems;
 	}
-	public static ArrayList<Song> getItems(int number) {
-		conn = DBConnectionUtil.getConnection();
-		String sql = "SELECT s.*, c.name AS cname FROM songs s JOIN categories c ON s.cat_id = c.id ORDER BY id DESC LIMIT ?";
-		ArrayList<Song> listItems = new ArrayList<>();
-		try {
-			pst = conn.prepareStatement(sql);
-			pst.setInt(1, number);
-			rs = pst.executeQuery();
-			while (rs.next()) {
-				Song ObjItem = new Song(rs.getInt("id"), rs.getString("name"), rs.getString("preview_text"),
-						rs.getString("detail_text"), rs.getTimestamp("date_create"), rs.getString("picture"),
-						rs.getInt("counter"), new Category(rs.getInt("cat_id"), rs.getString("cname")));
-				listItems.add(ObjItem);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			DBConnectionUtil.close(rs, pst, conn);
-		}
-		return listItems;
-	}
-	public static ArrayList<Song> getItemsByCategory(int idCat) {
-		conn = DBConnectionUtil.getConnection();
-		String sql = "SELECT s.*, c.name AS cname FROM songs AS s JOIN categories AS c ON s.cat_id=c.id WHERE cat_id = ?";
-		ArrayList<Song> listItems = new ArrayList<>();
-		try {
-			pst = conn.prepareStatement(sql);
-			pst.setInt(1, idCat);
-			rs = pst.executeQuery();
-			while (rs.next()) {
-				Song ObjItem = new Song(rs.getInt("id"), rs.getString("name"), rs.getString("preview_text"),
-						rs.getString("detail_text"), rs.getTimestamp("date_create"), rs.getString("picture"),
-						rs.getInt("counter"), new Category(rs.getInt("cat_id"), rs.getString("cname")));
-				listItems.add(ObjItem);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			DBConnectionUtil.close(rs, pst, conn);
-		}
-		return listItems;
-	}
-	public static ArrayList<Song> getRelatedItems(Song itemSong, int number) {
-		conn = DBConnectionUtil.getConnection();
-		String sql = "SELECT s.*, c.name AS cname FROM songs s JOIN categories c ON s.cat_id=c.id WHERE  cat_id = ? AND s.id != ? LIMIT ?";
-		ArrayList<Song> listItems = new ArrayList<>();
-		try {
-			pst = conn.prepareStatement(sql);
-			pst.setInt(1, itemSong.getItemCat().getIdCat());
-			pst.setInt(2, itemSong.getId());
-			pst.setInt(3, number);
-			rs = pst.executeQuery();
-			while (rs.next()) {
-				Song ObjItem = new Song(rs.getInt("id"), rs.getString("name"), rs.getString("preview_text"),
-						rs.getString("detail_text"), rs.getTimestamp("date_create"), rs.getString("picture"),
-						rs.getInt("counter"), new Category(rs.getInt("cat_id"), rs.getString("cname")));
-				listItems.add(ObjItem);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			DBConnectionUtil.close(rs, pst, conn);
-		}
-		return listItems;
-	}
+
 	public static Song getItem(int id) {
 		conn = DBConnectionUtil.getConnection();
 		String sql = "SELECT s.*, c.name AS cname FROM songs s JOIN categories c ON s.cat_id = c.id WHERE s.id=?";
@@ -122,19 +58,62 @@ public class SongDao {
 		}
 		return items;
 	}
-	public static void increaseView(int id) {
+
+	public static int addItem(Song song) {
+		int result = 0;
 		conn = DBConnectionUtil.getConnection();
-		String sql = "UPDATE songs SET counter = counter + 1 WHERE id = ?";
+		String sql = "INSERT INTO songs (name, preview_text, detail_text, picture, cat_id) VALUES (?, ?, ?, ?, ?)";
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setInt(1, id);
-			pst.executeUpdate();
+			pst.setString(1, song.getName());
+			pst.setString(2, song.getPreview_text());
+			pst.setString(3, song.getDetail_text());
+			pst.setString(4, song.getPicture());
+			pst.setInt(5, song.getItemCat().getIdCat());
+			result = pst.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBConnectionUtil.close(pst, conn);
 		}
+		return result;
 	}
 
+	public static int editItem(Song song) {
+		int result = 0;
+		conn = DBConnectionUtil.getConnection();
+		String sql = "UPDATE songs SET name= ?, preview_text= ?, detail_text= ?, picture = ?, cat_id= ? WHERE id =?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, song.getName());
+			pst.setString(2, song.getPreview_text());
+			pst.setString(3, song.getDetail_text());
+			pst.setString(4, song.getPicture());
+			pst.setInt(5, song.getItemCat().getIdCat());
+			pst.setInt(6, song.getId());
+			result = pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnectionUtil.close(pst, conn);
+		}
+		return result;
+	}
 
+	public static int delItem(int id) {
+		int result = 0;
+		conn = DBConnectionUtil.getConnection();
+		String sql = "DELETE FROM songs WHERE id = ?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			result = pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnectionUtil.close(pst, conn);
+		}
+
+		return result;
+	}
 }

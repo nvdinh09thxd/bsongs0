@@ -9,26 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.bean.Category;
-import model.dao.CatDao;
+import model.bean.Song;
+import model.dao.SongDao;
 
-public class AdminIndexCatController extends HttpServlet {
+public class AdminIndexSongController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public AdminIndexCatController() {
+    public AdminIndexSongController() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Category> listItems = CatDao.getItems();
-		request.setAttribute("listCat", listItems);
+		ArrayList<Song> listItems = SongDao.getItems();
+		request.setAttribute("listSong", listItems);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/admin/cat/index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/admin/song/index.jsp");
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		doGet(request, response);
 	}
-
 }

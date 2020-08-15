@@ -3,6 +3,7 @@
     <%@ page import="java.util.ArrayList"%>
     <%@ page import="model.bean.Category"%>
     <%@ page import="model.dao.CatDao"%>
+    <%@ page import="model.bean.Song"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 

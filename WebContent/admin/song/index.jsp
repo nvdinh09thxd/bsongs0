@@ -6,7 +6,7 @@
 	<div id="page-inner">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Quản lý danh mục</h2>
+				<h2>Quản lý bài hát</h2>
 			</div>
 		</div>
 		<!-- /. ROW  -->
@@ -19,7 +19,7 @@
 						<div class="table-responsive">
 							<div class="row">
 								<div class="col-sm-6">
-									<a href="<%=request.getContextPath()%>/admin/cat/add"
+									<a href="<%=request.getContextPath()%>/admin/song/add"
 										class="btn btn-success btn-md">Thêm</a>
 								</div>
 								<div class="col-sm-6" style="text-align: right;">
@@ -35,54 +35,78 @@
 								</div>
 							</div>
 							<%
-								if (request.getParameter("msg") != null) {
-									int msg = Integer.parseInt(request.getParameter("msg"));
-									switch (msg) {
-									case 1:
-										out.print("<h3 style='background: #67FF67; color: red'>Đã thêm thành công!</h3>");
+							if (request.getParameter("msg") != null) {
+								int msg = Integer.parseInt(request.getParameter("msg"));
+								switch (msg) {
+									case 1 :
+										out.print("<h3 style='color: red'>Đã lưu thành công!</h3>");
 										break;
-									case 2:
-										out.print("<h3 style='background: #67FF67; color: red'>Đã sửa thành công!</h3>");
+									case 2 :
+										out.print("<h3 style='color: red'>Đã sửa thành công!</h3>");
 										break;
-									case 3:
-										out.print("<h3 style='background: #67FF67; color: red'>Đã xóa thành công!</h3>");
+									case 3 :
+										out.print("<h3 style='color: red'>Đã xóa thành công!</h3>");
 										break;
-									case 0:
-										out.print("<h3 style='background: #67FF67; color: red'>Có lỗi trong quá trình xử lý!</h3>");
+									case 0 :
+										out.print("<h3 style='color: red'>Có lỗi trong quá trình xử lý!</h3>");
 										break;
-									}
 								}
+							}
 							%>
 							<table class="table table-striped table-bordered table-hover"
 								id="dataTables-example">
 								<thead>
 									<tr>
 										<th>ID</th>
+										<th>Tên bài hát</th>
 										<th>Danh mục</th>
+										<th>Lượt đọc</th>
+										<th>Hình ảnh</th>
 										<th width="160px">Chức năng</th>
 									</tr>
 								</thead>
 								<tbody>
 									<%
-										ArrayList<Category> listItems = (ArrayList<Category>) request.getAttribute("listCat");
-										if (listItems != null) {
-											for (Category objCat : listItems) {
+										if (request.getAttribute("listSong") != null) {
+										@SuppressWarnings("unchecked")
+											ArrayList<Song> listSong = (ArrayList<Song>) request.getAttribute("listSong");
+											if (listSong.size() > 0) {
+												for (Song objSong : listSong) {
+													String urlEdit = request.getContextPath()+"/admin/song/edit?id="+objSong.getId();
+													String urlDel = request.getContextPath()+"/admin/song/del?id="+objSong.getId();
 									%>
 									<tr>
-										<td><%=objCat.getIdCat()%></td>
-										<td class="center"><%=objCat.getName()%></td>
+										<td><%=objSong.getId()%></td>
+										<td class="center"><%=objSong.getName()%></td>
+										<td class="center"><%=objSong.getItemCat().getName()%></td>
+										<td class="center"><%=objSong.getCounter()%></td>
+										<td class="center">
+										<%
+										if(!"".equals(objSong.getPicture())){
+										%>
+										<img width="200px" height="200px"
+											src="<%=request.getContextPath()%>/templates/admin/assets/img/<%=objSong.getPicture()%>"
+											alt="<%=objSong.getPicture()%>" />
+											<%
+										} else {
+											%>
+											<p>Không có hình ảnh</p>
+											<%} %>
+										</td>
+											
 										<td class="center"><a
-											href="<%=request.getContextPath()%>/admin/cat/edit?id=<%=objCat.getIdCat()%>"
-											title="" class="btn btn-primary"><i class="fa fa-edit "></i>
-												Sửa</a> <a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" 
-												href="<%=request.getContextPath()%>/admin/cat/del?id=<%=objCat.getIdCat()%>"
-											title="" class="btn btn-danger"><i class="fa fa-pencil"></i>
-												Xóa</a></td>
+											href="<%=urlEdit%>" title=""
+											class="btn btn-primary"><i class="fa fa-edit "></i> Sửa</a> 
+											<a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"
+											href="<%=urlDel%>" title="" class="btn btn-danger"><i
+												class="fa fa-pencil"></i> Xóa</a></td>
 									</tr>
 									<%
 										}
+											}
 										}
 									%>
+
 								</tbody>
 							</table>
 							<div class="row">
@@ -131,7 +155,7 @@
 	</div>
 </div>
 <script>
-    document.getElementById("category").classList.add('active-menu');
+	document.getElementById("song").classList.add('active-menu');
 </script>
 <!-- /. PAGE INNER  -->
 <%@ include file="/templates/admin/inc/footer.jsp"%>
