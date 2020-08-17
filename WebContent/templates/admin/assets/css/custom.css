@@ -336,6 +336,10 @@ background-color: #FFF;
 .nav > li > a > i {
     margin-right:10px;
 }
+
+.error {
+	color: red;
+}
 /*==============================================
     UI ELEMENTS STYLES     
     =============================================*/

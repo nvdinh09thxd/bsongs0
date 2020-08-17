@@ -1,0 +1,10 @@
+1. Vào đường dẫn C:\Windows\System32\drivers\etc để mở file hosts
+2. chỉnh sửa lại trong file hosts để có domain theo ý mình
+3. thêm một đoạn lệnh vào file server.xml, 
+	<Host appBase="webapps" autoDeploy="true" name="bsong.pro" unpackWARs="true">
+		<Alias>bsong.pro</Alias>
+		<Context debug="0" docBase="D:/DINHNV/MyData/VINAENTER/Code_Jsp_Servlet/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/Bsong" path="" reloadable="true"/>
+	</Host>
+- chú ý chỉnh sửa các domain cho giống trong file hosts
+- chú ý thêm đường dẫn thật của dự án vào
+

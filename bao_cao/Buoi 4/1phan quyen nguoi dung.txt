@@ -1,0 +1,11 @@
+-	Tại trang addUser, lấy session userLogin, 
+	+ nếu userLogin.username là admin thì mới cho phép thêm
+	+ nếu không phải thì chuyển hướng đến trang danh sách user với thông báo không có quyền thêm, ở doPost cũng kiểm tra tương tự
+-	Tại trang editUser, lấy userLogin,
+	+ nếu userLogin.username là admin hoặc userLogin.id là id cần sửa thì mới cho phép sửa
+	+ nếu không phải thì chuyển hướng đến trang danh sách user với thông báo không có quyền sửa, ở doPost cũng kiểm tra tương tự
+-	Tại trang delUser, lấy userLogin, và id user cần xóa 
+	+ nếu user cần xóa là admin thì không được phép xóa
+	+ nếu userLogin không phải là admin thì cũng không đươc phép xóa
+	+ còn lại thì được phép xóa và sau khi xóa xong thì chuyển sang trang user với thông báo xóa thành công
+-	ở file index.jsp, sử dụng vài đoạn lệnh if để xử lý hiện các nút Sửa/Xóa cho phù hợp

@@ -11,36 +11,51 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.bean.Category;
 import model.bean.Song;
-import model.dao.CatDao;
 import model.dao.SongDao;
+import util.DefineUtil;
+import model.dao.CatDao;
 
 public class PublicCatController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private CatDao catDao;
+	private SongDao songDao;
 
 	public PublicCatController() {
 		super();
+		catDao = new CatDao();
+		songDao = new SongDao();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int id = 0;
+		int idCat = 0;
+		int currentPage = 1;
 		try {
-			id = Integer.parseInt(request.getParameter("id"));
-		} catch (NumberFormatException e) {
+			idCat = Integer.parseInt(request.getParameter("cid"));
+		} catch (Exception e) {
 			response.sendRedirect(request.getContextPath() + "/404");
 			return;
 		}
-
-		Category itemCat = CatDao.getItem(id);
-		if (itemCat == null) {
+		Category category = catDao.getItem(idCat);
+		if (category == null) {
 			response.sendRedirect(request.getContextPath() + "/404");
 			return;
 		}
-		request.setAttribute("itemCat", itemCat);
+		try {
+			currentPage = Integer.parseInt(request.getParameter("page"));
+		} catch (Exception e) {
+		}
+		int numberOfItems = songDao.numberOfItems(idCat);
+		int numberOfPages = (int) Math.ceil((float) numberOfItems / DefineUtil.NUMBER_PER_PAGE);
+		if (currentPage > numberOfPages || currentPage < 1) {
+			currentPage = 1;
+		}
+		int offset = (currentPage - 1) * DefineUtil.NUMBER_PER_PAGE;
 
-		ArrayList<Song> listSongByCategory = SongDao.getItemsByCategory(id);
-		request.setAttribute("listSongByCategory", listSongByCategory);
-
+		ArrayList<Song> listSongs = songDao.getItemsByCategoryPagination(offset, idCat);
+		request.setAttribute("listSongs", listSongs);
+		request.setAttribute("numberOfPages", numberOfPages);
+		request.setAttribute("currentPage", currentPage);
 		RequestDispatcher rd = request.getRequestDispatcher("/public/cat.jsp");
 		rd.forward(request, response);
 	}

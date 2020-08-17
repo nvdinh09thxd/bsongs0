@@ -1,0 +1,5 @@
+- Kiểm tra đăng nhập
+- Kiểm tra quyền xóa
++ Nếu username cần xóa là admin thì không được phép
++ Nếu username của userLogin là admin thì được phép xóa
++ Ngược lại thì không được phép xóa

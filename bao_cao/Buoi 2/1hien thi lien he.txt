@@ -1,0 +1,1 @@
+﻿Tạo trang servlet để lấy danh sách các liên hệ, sau đó chuyển tiếp sang file jsp để hiển thị ra

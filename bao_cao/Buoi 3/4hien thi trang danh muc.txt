@@ -1,0 +1,4 @@
+- Tạo trang Servlet để lấy idCat từ jsp truyền qua 
+- nếu idCat không tồn tại thì chuyển sang trang 404
+- Sau khi đã có idCat, lấy danh sách bài hát dựa vào idCat
+- Chuyển tiếp sang file jsp và hiển thị ra

@@ -1,0 +1,1 @@
+﻿- Tại các trang admin, kiểm tra đăng nhập, nếu trang nào chưa đăng nhập thì chuyển hướng về trang login ngay

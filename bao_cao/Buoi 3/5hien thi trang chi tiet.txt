@@ -1,0 +1,10 @@
+1.	Lấy chi tiết bài hát
+-	Tạo trang servlet để lấy idSong cần xem chi tiết
+-	Nếu idSong không hợp lệ thì chuyển sang trang 404
+-	Lấy chi tiết bài hát dựa vào idSong
+-	SetAttribute
+2.	Lấy bài hát liên quan
+-	Tạo phương thức để lấy các bài hát liên quan, dựa vào idSong
+-	SetAttribute
+Sau khi lấy được chi tiết bài hát và các bài hát liên quan, chuyển tiếp sang trang jsp và hiển thị ra
+3.	Tăng số lượt view cho bài hát

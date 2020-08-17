@@ -1,0 +1,5 @@
+-	Hiển thị trang admin index
+-	Chức năng hiển thị danh mục bài hát
+-	Chức năng thêm danh mục bài hát
+-	Chức năng sửa danh mục bài hát
+-	Chức năng xóa danh mục bài hát

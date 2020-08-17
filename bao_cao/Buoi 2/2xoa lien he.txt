@@ -1,0 +1,2 @@
+﻿- Tạo trang servlet để nhận id liên hệ từ file jsp gửi sang, nếu id không tồn tại thì chuyển sang trang contact với thông báo id không tồn tại
+- Thực hiện xóa liên hệ với id như trên, nếu xóa thành công thì chuyển sang trang contact với thông báo xóa thành công, nếu không thì thông báo xóa không thành công

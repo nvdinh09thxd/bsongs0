@@ -1,0 +1,15 @@
+- Kiểm tra đăng nhập
+- Lấy thông tin người dùng đăng nhập userLogin
+- Lấy id muốn sửa
+- Kiểm tra, nếu username của userLogin là admin hoặc id của userLogin bằng với id muốn sửa
+thì mới được phép sửa
+
+
+- Thực hiện sửa:
++ Lấy thông tin của user muốn sửa
++ setAttribute user muốn sửa
++ chuyển tiếp sang trang jsp
++ Nhập các thông tin cần sửa, sau khi bấm submit thì chuyển dữ liệu sang file servlet
++ Kiểm tra nếu chưa nhập thông tin nào thì thông báo cho người dùng nhập đầy đủ, 
++ kiểm tra username tồn tại và khác với userLogin hay chưa,
++ sau đó edit dữ liệu trong DB

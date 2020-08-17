@@ -1,0 +1,5 @@
+-	Tạo servlet để chuyển tiếp sang file contact.jsp
+-	Tại trang jsp, nhập các thông tin và gửi dữ liệu sang servlet
+-	Tại trang servlet, nhận các thông tin từ file jsp gửi sang và insert vào DB
+-	Nếu thành công thì chuyển hướng sang file jsp với thông báo lỗi
+- 	Nếu không thành công thì cũng chuyển tiếp sang file jsp với thông báo lỗi và lấy lại dữ liệu đã nhập

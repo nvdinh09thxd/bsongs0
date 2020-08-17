@@ -1,0 +1,9 @@
+﻿1. truy cập https://www.layershift.com/ và tạo một tài khoản
+2. Tạo một project mới, chọn server và DB
+3. Đặt tên cho ứng dụng
+
+
+4. Truyền vào đường dẫn localhost được tạo bởi layershift, với username và password được cung cấp
+5. Export file eclipse ra file war
+6. Upload lên host
+7. Deploy ứng dụng

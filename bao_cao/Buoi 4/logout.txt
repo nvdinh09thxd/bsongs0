@@ -1,0 +1,3 @@
+-	Tạo servlet để thực hiện logout
+-	Kiểm tra nếu có session userLogin thì xóa session này đi
+-	Sau khi xóa xong thì chuyển hướng sang trang admin

@@ -1,0 +1,4 @@
+1. vao trang http://tuckey.org/urlrewrite/ va download thu vien urlrewritefilter-4.0.3.jar về
+2. thêm đoạn lệnh config vào file web.xml
+3. Tạo ra file urlrewrite.xml để config đường dẫn thân thiện, có sử dụng biểu thức chính quy
+4. Vào các link trong file jsp để sửa lại đường dẫn cho thân thiện

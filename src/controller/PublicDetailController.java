@@ -15,40 +15,44 @@ import model.dao.SongDao;
 
 public class PublicDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private SongDao songDao;
 
 	public PublicDetailController() {
 		super();
+		songDao = new SongDao();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int id = 0;
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
+		int idSong = 0;
 		try {
-			id = Integer.parseInt(request.getParameter("id"));
+			idSong = Integer.parseInt(request.getParameter("did"));
 		} catch (NumberFormatException e) {
 			response.sendRedirect(request.getContextPath() + "/404");
 			return;
 		}
 
-		Song itemSong = SongDao.getItem(id);
+		Song itemSong = songDao.getItem(idSong);
 		if (itemSong == null) {
 			response.sendRedirect(request.getContextPath() + "/404");
 			return;
 		}
-		// tăng view
+		// tăng lượt view
 		HttpSession session = request.getSession();
-		String hasVisited = (String) session.getAttribute("hasVisited: " + id);
+		String hasVisited = (String) session.getAttribute("hasVisited: " + idSong);
 		if (hasVisited == null) {
-			session.setAttribute("hasVisited: " + id, "yes");
-			session.setMaxInactiveInterval(3);
-			// increase page view
-			SongDao.increaseView(id);
+			session.setAttribute("hasVisited: " + idSong, "yes");
+			session.setMaxInactiveInterval(10);
+			// increse page view
+			songDao.increaseView(idSong);
 		}
-
-		ArrayList<Song> relatedSongs = SongDao.getRelatedItems(itemSong, 2);
-
 		request.setAttribute("itemSong", itemSong);
-		request.setAttribute("relatedSongs", relatedSongs);
+
+		ArrayList<Song> relatedSong = songDao.getRelatedItems(itemSong, 2);
+		request.setAttribute("relatedSong", relatedSong);
 		RequestDispatcher rd = request.getRequestDispatcher("/public/detail.jsp");
 		rd.forward(request, response);
 	}

@@ -1,0 +1,9 @@
+﻿- Tạo trang servlet để chuyển tiếp sang trang add.jsp để nhập thông tin bài hát cần thêm
+- Từ trang jsp, nhập các thông tin cần thêm và nhấn submit, 
+- gửi các thông tin này sang trang servlet,
+- Lấy các giá trị không phải là file, kiểm tra, nếu chưa nhập thông tin nào thì yêu cầu nhập
+- Xử lý upload file
+- Tạo đối tượng ItemSong để lưu các thông tin cần thêm
+- Thực hiện insert vào DB, nếu thành công thì chuyển hướng sang file index.jsp và thông báo
+- Nếu không thành công thì chuyển tiếp sang file add.jsp thông báo và lấy lại thông tin đã nhập,
+đồng thời xóa ảnh đã upload

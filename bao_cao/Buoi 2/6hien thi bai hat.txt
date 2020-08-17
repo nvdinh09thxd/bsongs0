@@ -1,0 +1,2 @@
+﻿- Tạo trang servlet để lấy tất cả bài hát trong DB sau đó gửi sang trang jsp và hiển thị ra
+- có phân trang

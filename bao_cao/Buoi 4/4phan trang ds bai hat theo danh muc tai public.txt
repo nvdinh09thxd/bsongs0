@@ -1,0 +1,15 @@
+﻿-	Dùng try...cat để lấy catId
+-	Viết phương thức để lấy số bài hát dựa vào CatId: numberOfItems(CatId)
+-	Tính số trang dựa vào tổng số bài hát và số tin mỗi trang: numberOfPages
+-	Lấy số trang hiện tại currentPage
+- 	Lưu ý: nhớ dùng try...catch để bắt lỗi nếu không truyền vào số trang
+-	Tính offset = (currentPage – 1) * Number_Per_Page
+-	Sau khi có offset thì viết phương thức để lấy số bài hát dựa vào offset và catId: listSong
+-	Gửi các thông tin listSong, numberOfPages, currentPage sang file jsp để thực hiện phân trang
+
+-	Tại trang jsp,
+
+o	Lấy các giá trị numberOfPages, currentPage từ servlet gửi sang
+o	Dùng vòng lặp để hiển thị tất cả các số trang
+o	Dùng lệnh if active trang hiện tại
+o	Làm thêm chức năng trang tiếp

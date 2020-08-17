@@ -1,15 +1,15 @@
 package model.bean;
 
 public class Category {
-	int idCat;
-	String name;
-	
-	public int getIdCat() {
-		return idCat;
+	private int id;
+	private String name;
+
+	public int getId() {
+		return id;
 	}
 
-	public void setIdCat(int idCat) {
-		this.idCat = idCat;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -20,13 +20,14 @@ public class Category {
 		this.name = name;
 	}
 
-	public Category(int idCat, String name) {
+	public Category(int id, String name) {
 		super();
-		this.idCat = idCat;
+		this.id = id;
 		this.name = name;
 	}
 
 	public Category() {
 		super();
 	}
+
 }

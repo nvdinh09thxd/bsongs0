@@ -1,0 +1,2 @@
+- Tạo ra trang Servlet để lấy danh sách các bài hát
+- Chuyển tiếp sang trang jsp để hiển thị

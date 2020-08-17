@@ -1,0 +1,8 @@
+- Kiểm tra đăng nhập
+- Lấy thông tin userLogin
+- Kiểm tra, nếu username của userLogin là admin thì mới được phép thêm
+-	Tạo trang servlet để chuyển tiếp sang trang add.jsp
+-	Sau khi nhập thông tin ở file add.jsp, bấm submit thì chuyển thông tin vào file servlet,
+-	Kiểm tra nếu chưa nhập thông tin nào thì chuyển tiếp sang file jsp với thông báo
+-	Kiểm tra nếu nhập vào username đã tồn tại thì thông báo tại trang add.jsp (viết phương thức hasUser(username))
+-	Insert vào DB

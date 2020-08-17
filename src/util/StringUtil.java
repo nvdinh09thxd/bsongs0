@@ -34,7 +34,7 @@ public class StringUtil {
 		slug = slug.replaceAll("([^0-9a-z-\\s])", "");
 		// Thay space thành dấu gạch ngang
 		slug = slug.replaceAll("[\\s]", "-");
-		// Đổi nhi�?u ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+		// Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
 		slug = slug.replaceAll("(-+)", "-");
 		// Xóa các ký tự gạch ngang ở đầu và cuối
 		slug = slug.replaceAll("^-+", "");

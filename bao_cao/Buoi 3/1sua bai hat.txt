@@ -1,0 +1,16 @@
+﻿-	Tạo trang servlet để nhận idSong muốn sửa từ file jsp truyền qua
+-	Nếu idSong không tồn tại thì chuyển sang trang index song và thông báo id không tồn tại
+-	Sau khi có idSong, lấy bài hát với idSong này và chuyển tiếp sang file edit.jsp
+
+-	Tại trang edit.jsp, lấy kết quả từ servlet gửi sang, hiển  thị ra những thông tin muốn sửa
+
+-	Sau khi nhập lại các thông tin muốn sửa thì bấm submit để chuyển sang trang servlet
+
+-	Tại trang servlet, 
++ lấy các giá trị từ file jsp gửi sang,
++ kiểm tra và validate dữ liệu
++ Nếu chưa chọn hình ảnh thì lấy lại hình ảnh cũ
++ Nếu có chọn hình ảnh thì upload hình ảnh mới lên
++ Tạo đối tượng để lưu các thuộc tính vào đối tượng
++ thực hiện edit trong DB, 	* nếu thành công mà có chọn hình ảnh thì xóa ảnh cũ đi
+				* nếu không thành công thì xóa hình ảnh mới upload lên đi

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite>
+<rule>
+<!-- /home -->
+    <from>/home</from>
+    <to>/index</to>
+</rule>
+<rule>
+<!-- /danh-muc/nhac-viet-2 -->
+    <from>/danh-muc/(.*)-([0-9]+)</from>
+    <to>/cat?cid=$2</to>
+</rule>
+<rule>
+<!-- /chi-tiet/cang-kho-cang-yeu-2.html -->
+    <from>/chi-tiet/(.*)-([0-9]+).html</from>
+    <to>/detail?did=$2</to>
+</rule>
+<!-- <rule>
+/tim-kiem=a
+    <from>/tim-kiem/(.*)+)</from>
+    <to>/detail?id=$2</to>
+</rule> -->
+</urlrewrite>

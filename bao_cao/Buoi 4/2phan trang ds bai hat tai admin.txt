@@ -1,0 +1,14 @@
+-	Viết phương thức để lấy tổng số bài hát trong DB: numberOfItems
+-	Tính số trang dựa vào tổng số bài hát và số tin mỗi trang: numberOfPages
+-	Lấy số trang hiện tại currentPage
+-	Tính offset = (currentPage – 1) * Number_Per_Page
+-	Sau khi có offset thì viết phương thức để lấy số bài hát dựa vào offset listSong
+-	Gửi các thông tin listSong, numberOfPages, currentPage sang file jsp để thực hiện phân trang
+
+-	Tại trang jsp,
+
+o	Lấy các giá trị numberOfPages, currentPage từ servlet gửi sang
+o	Dùng vòng lặp để hiển thị tất cả các số trang
+o	Dùng thuộc tính active để active trang hiện tại
+o	Dùng thuộc tính disabled để disabled các nút trang trước và trang tiếp
+

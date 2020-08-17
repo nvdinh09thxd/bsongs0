@@ -1,0 +1,5 @@
+﻿-	Tạo trang servlet để chuyển tiếp sang giao diện login
+-	Nhập username và password vào giao diện login và bấm submit thì gửi thông tin sang file servlet để xử lý
+-	Từ doPost của servlet Login, viết phương thức lấy userLogin dựa vào username và password
+	+ nếu có thì set Session cho userLogin này đồng thời chuyển hướng sang trang admin, 
+	+ nếu không có thì chuyển tiếp sang trang jsp với thông báo username không tồn tại, đồng thời hiện thị thông tin đã nhập trong form

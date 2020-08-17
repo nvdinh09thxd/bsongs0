@@ -38,19 +38,23 @@ public class PublicContactController extends HttpServlet {
 
 		// validate du lieu
 		if ("".equals(name)) {
-			request.getRequestDispatcher("/public/contact.jsp?msg=2").forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("/public/contact.jsp?msg=2");
+			rd.forward(request, response);
 			return;
 		}
 		if ("".equals(email)) {
-			request.getRequestDispatcher("/public/contact.jsp?msg=3").forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("/public/contact.jsp?msg=3");
+			rd.forward(request, response);
 			return;
 		}
 		if ("".equals(website)) {
-			request.getRequestDispatcher("/public/contact.jsp?msg=4").forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("/public/contact.jsp?msg=4");
+			rd.forward(request, response);
 			return;
 		}
 		if ("".equals(message)) {
-			request.getRequestDispatcher("/public/contact.jsp?msg=5").forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("/public/contact.jsp?msg=5");
+			rd.forward(request, response);
 			return;
 		}
 
@@ -60,9 +64,9 @@ public class PublicContactController extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + "/contact?msg=1");
 			return;
 		} else {
-			request.getRequestDispatcher("/public/contact.jsp?msg=0").forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("/public/contact.jsp?msg=0");
+			rd.forward(request, response);
 			return;
 		}
 	}
-
 }

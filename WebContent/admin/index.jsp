@@ -1,4 +1,7 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@page import="model.dao.UserDao"%>
+<%@page import="model.dao.CatDao"%>
+<%@page import="model.dao.SongDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ include file="/templates/admin/inc/header.jsp" %>
 <%@ include file="/templates/admin/inc/leftbar.jsp" %>
@@ -11,6 +14,11 @@
         </div>
         <!-- /. ROW  -->
         <hr />
+        <%
+        SongDao songDao = new SongDao();
+        CatDao catDao = new CatDao();
+        UserDao userDao = new UserDao();
+        %>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="panel panel-back noti-box">
@@ -18,8 +26,8 @@
                     <i class="fa fa-bars"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="" title="">Quản lý danh mục</a></p>
-                        <p class="text-muted">Có 5 danh mục</p>
+                        <p class="main-text"><a href="<%=request.getContextPath() %>/admin/cats" title="">Quản lý danh mục</a></p>
+                        <p class="text-muted">Có <%=catDao.numberOfItems() %> danh mục</p>
                     </div>
                 </div>
             </div>
@@ -29,8 +37,8 @@
                     <i class="fa fa-bell-o"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="" title="">Quản lý bài hát</a></p>
-                        <p class="text-muted">Có 10 bài hát</p>
+                        <p class="main-text"><a href="<%=request.getContextPath() %>/admin/songs" title="">Quản lý bài hát</a></p>
+                        <p class="text-muted">Có <%=songDao.numberOfItems() %> bài hát</p>
                     </div>
                 </div>
             </div>
@@ -40,8 +48,8 @@
                     <i class="fa fa-rocket"></i>
                 </span>
                     <div class="text-box">
-                        <p class="main-text"><a href="" title="">Quản lý người dùng</a></p>
-                        <p class="text-muted">Có 15 người dùng</p>
+                        <p class="main-text"><a href="<%=request.getContextPath() %>/admin/users" title="">Quản lý người dùng</a></p>
+                        <p class="text-muted">Có <%=userDao.numberOfItems() %> người dùng</p>
                     </div>
                 </div>
             </div>

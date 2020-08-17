@@ -1,3 +1,17 @@
 eclipse.preferences.version=1
+encoding//WebContent/auth/login.jsp=UTF-8
+encoding//WebContent/public/detail.jsp=UTF-8
+encoding//src/controller/AdminAddCatController.java=UTF-8
+encoding//src/controller/AdminAddSongController.java=UTF-8
+encoding//src/controller/AdminAddUserController.java=UTF-8
+encoding//src/controller/AdminDelSongController.java=UTF-8
+encoding//src/controller/AdminDelUserController.java=UTF-8
+encoding//src/controller/AdminEditCatController.java=UTF-8
+encoding//src/controller/AdminEditSongController.java=UTF-8
+encoding//src/controller/AdminEditUserController.java=UTF-8
+encoding//src/controller/AdminIndexCatController.java=UTF-8
+encoding//src/controller/AdminIndexController.java=UTF-8
+encoding//src/controller/LoginController.java=UTF-8
 encoding//src/controller/PublicDetailController.java=UTF-8
+encoding//src/controller/PublicRatingController.java=UTF-8
 encoding//src/util/StringUtil.java=UTF-8

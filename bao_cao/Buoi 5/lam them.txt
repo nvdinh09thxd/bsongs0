@@ -1,0 +1,5 @@
+﻿- chức năng tìm kiếm bài hát ở trang public
+- chức năng tìm kiếm bài hát rồi sau đó ghi lại từ tìm kiếm vào ô tìm kiếm
+- chức năng tìm kiếm, sau khi tìm xong thì in đậm từ cần tìm
+- chức năng đánh giá bài hát, bình luận bài hát ở public
+- chức năng hiển thị và active bình luận ở admin

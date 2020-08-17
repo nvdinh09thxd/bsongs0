@@ -1,0 +1,3 @@
+- khi hiển thị danh sách người dùng có phân quyền
++ nếu là người dùng bình thường thì chỉ hiện nút sửa ở tên người đó
++ nếu là admin thì hiện nút sửa và xóa ở tất cả người dùng
