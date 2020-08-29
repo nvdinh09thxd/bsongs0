@@ -31,6 +31,7 @@ public class PublicSearchController extends HttpServlet {
 		for (Song item : listSongs) {
 			String songName = item.getName();
 			item.setName(songName.replaceAll("(?i)" + name, "<b>" + name + "</b>"));
+			//(?i) : thay thế không phân biệt hoa thường
 		}
 		request.setAttribute("listSongs", listSongs);
 		RequestDispatcher rd = request.getRequestDispatcher("/public/index.jsp");
@@ -39,6 +40,7 @@ public class PublicSearchController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }

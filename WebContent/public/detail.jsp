@@ -1,3 +1,4 @@
+<%@page import="model.bean.Comment"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="model.dao.RatingDao"%>
 <%@page import="model.bean.Song"%>
@@ -26,6 +27,21 @@
     <b>Đánh giá bài hát</b>
     <span id="rating"></span>
     <p style="color: red; font-size: 20px;">Danh sách bình luận</p>
+    <div id="comment">
+		<%
+			@SuppressWarnings("unchecked")
+			ArrayList<Comment> listCmts = (ArrayList<Comment>) request.getAttribute("listCmts");
+			if(listCmts!=null && listCmts.size()>0){
+				for(Comment objCmt: listCmts){
+					if(objCmt.isActive()){
+						String cmtDate = new SimpleDateFormat("dd-MM-yyyy").format(objCmt.getDate_create());
+		%>
+		<b><%=objCmt.getUsername() %>:</b>
+		<span><%=objCmt.getComment() %> -----</span>
+		<i><%=cmtDate %></i>
+		<br />
+		<%}}} %>
+	</div>
     <form>
 			<input type="text" name="fullname" id="fullname" value="" placeholder="Nhập tên" required="required" />
 			<input type="text" name="cmt" id="cmt" value="" placeholder="Nhập bình luận" required="required" />
@@ -108,7 +124,7 @@
 						alert("Có lỗi rồi!");
 					}
 				});
-			}else{
+			} else {
 				alert("Vui lòng nhập đầy đủ thông tin khi bình luận!");
 			}
 		};

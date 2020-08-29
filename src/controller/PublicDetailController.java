@@ -10,16 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.bean.Comment;
 import model.bean.Song;
+import model.dao.CommentDao;
 import model.dao.SongDao;
 
 public class PublicDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private SongDao songDao;
+	private CommentDao cmtDao;
 
 	public PublicDetailController() {
 		super();
 		songDao = new SongDao();
+		cmtDao = new CommentDao();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -53,6 +57,8 @@ public class PublicDetailController extends HttpServlet {
 
 		ArrayList<Song> relatedSong = songDao.getRelatedItems(itemSong, 2);
 		request.setAttribute("relatedSong", relatedSong);
+		ArrayList<Comment> listCmts = cmtDao.getItems(idSong);
+		request.setAttribute("listCmts", listCmts);
 		RequestDispatcher rd = request.getRequestDispatcher("/public/detail.jsp");
 		rd.forward(request, response);
 	}
