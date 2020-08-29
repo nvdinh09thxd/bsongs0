@@ -1,5 +1,10 @@
 /* Design by http://www.dreamtemplate.com */
 @charset "utf-8";
+.active_cat {
+	color: #ff0000 !important;
+	font-weight: bold;
+	text-decoration: none;
+}
 body {
 	margin:0;
 	padding:0;

@@ -6,16 +6,21 @@
 <div class="content_resize">
 	<div class="mainbar">
 		<%
-			@SuppressWarnings("unchecked")
-			ArrayList<Song> listSongs = (ArrayList<Song>) request.getAttribute("listSongs");
-			if (listSongs != null && listSongs.size() > 0) {
+			Category category = (Category) request.getAttribute("category");
+	    	if(category!=null){
 		%>
 		<div class="article">
-			<h1><%=listSongs.get(0).getItemCat().getName()%></h1>
+			<h1><%=category.getName()%></h1>
 		</div>
 		<%
+    		}
+		%>
+		<%
+			@SuppressWarnings("unchecked")
+			ArrayList<Song> listSongsByIdCat = (ArrayList<Song>) request.getAttribute("listSongsByIdCat");
+			if (listSongsByIdCat != null && listSongsByIdCat.size() > 0) {
 			int i = 0;
-			for (Song objSong : listSongs) {
+			for (Song objSong : listSongsByIdCat) {
 				i++;
 				String date_string = new SimpleDateFormat("dd-MM-yyyy").format(objSong.getDate_create());
 				String urlSlug = request.getContextPath() + "/chi-tiet/" + StringUtil.makeSlug(objSong.getName())
@@ -53,10 +58,10 @@
 		<%
 			int numberOfPages = (Integer) request.getAttribute("numberOfPages");
 			int currentPage = (Integer) request.getAttribute("currentPage");
-			if (listSongs != null && listSongs.size() > 0 && numberOfPages > 1) {
+			if (listSongsByIdCat != null && listSongsByIdCat.size() > 0 && numberOfPages > 1) {
 				String urlSlug = request.getContextPath() + "/danh-muc/"
-						+ StringUtil.makeSlug(listSongs.get(0).getItemCat().getName()) + "-"
-						+ listSongs.get(0).getItemCat().getId();
+						+ StringUtil.makeSlug(listSongsByIdCat.get(0).getItemCat().getName()) + "-"
+						+ listSongsByIdCat.get(0).getItemCat().getId();
 		%>
 		<p class="pages">
 			<small>Trang <%=currentPage%> của <%=numberOfPages%></small>
@@ -86,6 +91,9 @@
 	<div class="clr"></div>
 </div>
 <script>
+	<%if(category!=null){%>
+		document.getElementById("<%=category.getId()%>").classList.add('active_cat');
+	<%}%>
 	document.getElementById("index").classList.add('active');
 </script>
 <%@ include file="/templates/public/inc/footer.jsp"%>

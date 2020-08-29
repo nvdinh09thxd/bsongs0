@@ -53,7 +53,9 @@ public class PublicCatController extends HttpServlet {
 		int offset = (currentPage - 1) * DefineUtil.NUMBER_PER_PAGE;
 
 		ArrayList<Song> listSongs = songDao.getItemsByCategoryPagination(offset, idCat);
-		request.setAttribute("listSongs", listSongs);
+		
+		request.setAttribute("category", category);
+		request.setAttribute("listSongsByIdCat", listSongs);
 		request.setAttribute("numberOfPages", numberOfPages);
 		request.setAttribute("currentPage", currentPage);
 		RequestDispatcher rd = request.getRequestDispatcher("/public/cat.jsp");

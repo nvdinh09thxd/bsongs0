@@ -30,7 +30,7 @@
 	  for(Category objCat: listCat){
 		  String urlSlug = request.getContextPath() + "/danh-muc/"+ StringUtil.makeSlug(objCat.getName()) +"-"+objCat.getId();
   %>
-    <li><a href="<%=urlSlug%>"><%=objCat.getName() %></a></li>
+    <li><a id="<%=objCat.getId()%>" href="<%=urlSlug%>"><%=objCat.getName() %></a></li>
     <%
   }}
     %>

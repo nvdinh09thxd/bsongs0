@@ -206,4 +206,12 @@
     <servlet-name>PublicRatingController</servlet-name>
     <url-pattern>/rating</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>PublicCommentController</servlet-name>
+    <servlet-class>controller.PublicCommentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PublicCommentController</servlet-name>
+    <url-pattern>/comment</url-pattern>
+  </servlet-mapping>
 </web-app>

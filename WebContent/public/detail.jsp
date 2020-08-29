@@ -83,7 +83,7 @@
 			cancelPlace: 'right',
 			half: true,
 			start: <%=rating%>,
-			path:"/Bsong/img/",
+			path:"/bsongs/img/",
 		});
 	});
 	
