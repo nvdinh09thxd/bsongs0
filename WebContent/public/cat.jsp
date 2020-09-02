@@ -42,7 +42,7 @@
 			<div class="post_content">
 				<p><%=objSong.getPreview_text()%></p>
 				<p class="spec">
-					<a href="<%=request.getContextPath()%>/detail?did=<%=objSong.getId()%>"
+					<a href="<%=urlSlug%>"
 						class="rm">Chi tiết &raquo;</a>
 				</p>
 			</div>
@@ -60,8 +60,8 @@
 			int currentPage = (Integer) request.getAttribute("currentPage");
 			if (listSongsByIdCat != null && listSongsByIdCat.size() > 0 && numberOfPages > 1) {
 				String urlSlug = request.getContextPath() + "/danh-muc/"
-						+ StringUtil.makeSlug(listSongsByIdCat.get(0).getItemCat().getName()) + "-"
-						+ listSongsByIdCat.get(0).getItemCat().getId();
+						+ StringUtil.makeSlug(category.getName()) + "-"
+						+ category.getId();
 		%>
 		<p class="pages">
 			<small>Trang <%=currentPage%> của <%=numberOfPages%></small>

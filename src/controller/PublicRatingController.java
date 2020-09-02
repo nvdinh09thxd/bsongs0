@@ -32,17 +32,17 @@ public class PublicRatingController extends HttpServlet {
 			score = Float.parseFloat(request.getParameter("ascore"));
 		}
 		Rating item = new Rating(idSong, score, 0, null);
-		if (raty.hasRaty(idSong)) {
+		if (raty.hasRaty(idSong)) {// Nếu đã đánh giá trước đó thì cập nhật lại
 			if (raty.editItem(item) > 0) {
 				response.getWriter().println("Cám ơn bạn đã đánh giá!");
 			} else {
-				response.getWriter().println("Không thể lưu!");
+				response.getWriter().println("Không thể lưu đánh giá!");
 			}
-		} else {
+		} else {// Nếu chưa đánh giá thì thêm mới
 			if (raty.addItem(item) > 0) {
 				response.getWriter().println("Cám ơn bạn đã đánh giá!");
 			} else {
-				response.getWriter().println("Không thể lưu!");
+				response.getWriter().println("Không thể lưu đánh giá!");
 			}
 		}
 	}

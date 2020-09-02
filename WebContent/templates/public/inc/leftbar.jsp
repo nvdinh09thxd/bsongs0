@@ -46,8 +46,9 @@
   ArrayList<Song> recentSongs = songDao.getItems(6);
   if(recentSongs.size()>0){
 	  for(Song objSong: recentSongs){
+		  String urlSlug = request.getContextPath() + "/chi-tiet/" + StringUtil.makeSlug(objSong.getName()) + "-" + objSong.getId() + ".html";
   %>
-    <li><a href="<%=request.getContextPath()%>/detail?did=<%=objSong.getId() %>"><%=objSong.getName()%></a><br />
+    <li><a href="<%=urlSlug%>"><%=objSong.getName()%></a><br />
       <%if(objSong.getPreview_text().length()>50) out.print(objSong.getPreview_text().substring(0, 50)+"..."); else out.print(objSong.getPreview_text()); %></li>
       <%}} %>
   </ul>

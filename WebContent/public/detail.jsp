@@ -19,7 +19,7 @@
   		<p style="display: none" id="idSong"><%=itemSong.getId() %></p>
       <h1><%=itemSong.getItemCat().getName() %></h1>
       <div class="clr"></div>
-      <h2><a href="" title="<%=itemSong.getName() %>"><%=itemSong.getName() %></a></h2>
+      <h2><a href="javascript: void(0)" title="<%=itemSong.getName() %>"><%=itemSong.getName() %></a></h2>
       <p>Ngày đăng: <%=songDate %>. Lượt xem: <%=itemSong.getCounter()%></p>
       <div class="vnecontent">
          <%=itemSong.getDetail_text() %>
@@ -43,8 +43,8 @@
 		<%}}} %>
 	</div>
     <form>
-			<input type="text" name="fullname" id="fullname" value="" placeholder="Nhập tên" required="required" />
-			<input type="text" name="cmt" id="cmt" value="" placeholder="Nhập bình luận" required="required" />
+			<input type="text" name="fullname" id="fullname" value="" placeholder="Nhập tên" />
+			<input type="text" name="cmt" id="cmt" value="" placeholder="Nhập bình luận" />
 			<a href="javascript:void(0)" title="" onclick="onClickComment()">Bình luận</a>
 	</form>
       <%} else { %>
@@ -99,7 +99,7 @@
 			cancelPlace: 'right',
 			half: true,
 			start: <%=rating%>,
-			path:"/bsongs/img/",
+			path:"/bsongs/imgs/",
 		});
 	});
 	
@@ -128,6 +128,9 @@
 				alert("Vui lòng nhập đầy đủ thông tin khi bình luận!");
 			}
 		};
-		document.getElementById("index").classList.add('active');
+	document.getElementById("index").classList.add('active');
+	<%if(itemSong!=null){%>
+		document.getElementById("<%=itemSong.getItemCat().getId()%>").classList.add('active_cat');
+	<%}%>
 </script>
 <%@ include file="/templates/public/inc/footer.jsp" %>

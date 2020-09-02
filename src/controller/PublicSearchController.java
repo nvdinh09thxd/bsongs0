@@ -28,9 +28,9 @@ public class PublicSearchController extends HttpServlet {
 		request.setAttribute("songName", name);
 		request.setAttribute("numberOfPages", 1);
 		request.setAttribute("currentPage", 1);
-		for (Song item : listSongs) {
-			String songName = item.getName();
-			item.setName(songName.replaceAll("(?i)" + name, "<b>" + name + "</b>"));
+		for (Song itemSong : listSongs) {
+			String songName = itemSong.getName();
+			itemSong.setName(songName.replaceAll("(?i)" + name, "<b>" + name + "</b>"));
 			//(?i) : thay thế không phân biệt hoa thường
 		}
 		request.setAttribute("listSongs", listSongs);
