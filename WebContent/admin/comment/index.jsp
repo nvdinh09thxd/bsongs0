@@ -1,5 +1,5 @@
-﻿<%@page import="model.bean.Category"%>
-<%@page import="model.dao.CatDao"%>
+﻿<%@page import="model.dao.CommentDao"%>
+<%@page import="model.bean.Comment"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
@@ -9,7 +9,7 @@
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h2>Quản lý danh mục</h2>
+                <h2>Quản lý bình luận</h2>
             </div>
         </div>
         <!-- /. ROW  -->
@@ -20,22 +20,13 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <a href="<%=request.getContextPath() %>/admin/cat/add" class="btn btn-success btn-md">Thêm</a>
-                                </div> <br /> <br />
-                            </div>
 							<%
 								if(request.getParameter("msg")!=null){
 									int msg = Integer.parseInt(request.getParameter("msg"));
 									switch(msg){
-										case 1: out.print("<p style='color: green; background: yellow'>Thêm thành công!</p>");
+										case 1: out.print("<p style='color: green; background: yellow'>Xóa thành công!</p>");
 										break;
-										case 2: out.print("<p style='color: green; background: yellow'>Sửa thành công!</p>");
-										break;
-										case 3: out.print("<p style='color: green; background: yellow'>Xóa thành công!</p>");
-										break;
-										case 4: out.print("<p style='color: red; background: yellow'>ID không tồn tại!</p>");
+										case 2: out.print("<p style='color: red; background: yellow'>ID không tồn tại!</p>");
 										break;
 										case 0: out.print("<p style='color: red; background: yellow'>Có lỗi trong quá trình xử lý!</p>");
 										break;
@@ -46,27 +37,33 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Tên danh muc</th>
+                                        <th>Username</th>
+                                        <th>Comment</th>
+                                        <th>Active</th>
                                         <th width="160px">Chức năng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <%
 	                               		@SuppressWarnings("unchecked")
-	                                	ArrayList<Category> listCat = (ArrayList<Category>) request.getAttribute("listCat");
-	                                	if(listCat!=null && listCat.size()>0){
-	                                		for(Category objCat : listCat){
+	                                	ArrayList<Comment> listCmts = (ArrayList<Comment>) request.getAttribute("listCmts");
+	                                	if(listCmts!=null && listCmts.size()>0){
+	                                		for(Comment objCmt : listCmts){
                                 %>
                                     <tr>
-                                        <td><%=objCat.getId() %></td>
-                                        <td class="center"><%=objCat.getName() %></td>
+                                        <td><%=objCmt.getId() %></td>
+                                        <td class="center"><%=objCmt.getUsername() %></td>
+                                        <td class="center"><%=objCmt.getComment() %></td>
                                         <td class="center">
-                                            <a href="<%=request.getContextPath() %>/admin/cat/edit?id=<%=objCat.getId() %>" title="Sửa" class="btn btn-primary"><i class="fa fa-edit "></i> Sửa</a>
-                                            <a href="<%=request.getContextPath() %>/admin/cat/del?id=<%=objCat.getId() %>" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" title="Xóa" class="btn btn-danger"><i class="fa fa-pencil"></i> Xóa</a>
+	                                        <a href="javascript: void(0)" title="">
+		                                        <img src="<%=DefineUtil.URL_ADMIN %>/display/<%if(objCmt.isActive()) out.print("active.gif"); else out.print("deactive.gif");%>" alt="<%=objCmt.getId() %>"/>
+	                                        </a>
+                                        </td>
+                                        <td class="center">
+                                            <a href="<%=request.getContextPath() %>/admin/comment/del?id=<%=objCmt.getId() %>" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" title="Xóa" class="btn btn-danger"><i class="fa fa-pencil"></i> Xóa</a>
                                         </td>
                                     </tr>
-									<% }
-									} else {
+									<% }} else {
 										out.print("Khong co du lieu!");
 									}%>
 									
@@ -81,7 +78,25 @@
     </div>
 </div>
 <script>
-    document.getElementById("category").classList.add('active-menu');
+    document.getElementById("comment").classList.add('active-menu');
+    $("img").click(function(){
+	    var image = $(this)
+	    $.ajax({
+			url: '<%=request.getContextPath()%>/admin/comments',
+				type : 'POST',
+				cache : false,
+				data : {
+					aid: image.attr("alt"),
+					asrc : image.attr("src")
+				},
+				success : function(data) {
+					image.attr("src", data)
+				},
+				error : function() {
+					alert("Có lỗi xảy ra");
+				}
+			});
+		});
 </script>
 <!-- /. PAGE INNER  -->
 <%@ include file="/templates/admin/inc/footer.jsp" %>

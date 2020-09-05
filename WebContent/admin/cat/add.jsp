@@ -13,9 +13,9 @@
         <hr />
         					<%
         						String name = request.getParameter("name");       						
-								if(request.getParameter("msg")!=null){
-									int msg = Integer.parseInt(request.getParameter("msg"));
-									if(msg==0){
+								if(request.getParameter("msg") != null){
+									String msg = request.getParameter("msg");
+									if("0".equals(msg)){
 										out.print("<p style='color: red; background: yellow'>Có lỗi trong quá trình xử lý!</p>");
 									}
 								}

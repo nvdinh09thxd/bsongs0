@@ -19,7 +19,7 @@ public class CatDao {
 	public ArrayList<Category> getItems() {
 		conn = DBConnectionUtil.getConnection();
 		ArrayList<Category> ListItems = new ArrayList<>();
-		String sql = "SELECT * FROM categories ORDER BY id DESC";
+		String sql = "SELECT * FROM categories ORDER BY id";
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);

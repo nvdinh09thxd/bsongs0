@@ -135,6 +135,22 @@
     <url-pattern>/admin/song/del</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>AdminIndexCommentController</servlet-name>
+    <servlet-class>controller.AdminIndexCommentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexCommentController</servlet-name>
+    <url-pattern>/admin/comments</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminDelCmtController</servlet-name>
+    <servlet-class>controller.AdminDelCmtController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDelCmtController</servlet-name>
+    <url-pattern>/admin/comment/del</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>LoginController</servlet-name>
     <servlet-class>controller.LoginController</servlet-class>
   </servlet>

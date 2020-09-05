@@ -78,7 +78,7 @@
                                     <div class="form-group">
                                         <label for="picture">Hình ảnh</label>
                                         <input type="file" name="picture" />
-                                        <%if(picture!=""){ %>
+                                        <%if(!"".equals(picture)){ %>
                                         <img width="200px" height="200px" src="<%=DefineUtil.URL_PICTURE %>/<%=picture %>" alt="Không có hình ảnh" />
                                         <%} %>
                                     </div>

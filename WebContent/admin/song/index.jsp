@@ -116,7 +116,6 @@
                                         <ul class="pagination">
                                             <li class="paginate_button previous <%if(currentPage==1) out.print("disabled"); %>" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="<%if(currentPage>1) out.print(request.getContextPath() + "/admin/songs?page="+(currentPage-1)); else out.print("javascript:void(0)");%>">Trang trước</a></li>
                                             <%
-												String active ="";
 												for(int i=1; i<=numberOfPages; i++){
 											%>
                                             <li class="paginate_button <%if(currentPage==i) out.print("active");%>" aria-controls="dataTables-example" tabindex="0"><a href="<%=request.getContextPath()%>/admin/songs?page=<%=i%>"><%=i%></a></li>
