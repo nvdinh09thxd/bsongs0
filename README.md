@@ -1,11 +1,11 @@
-﻿Public:
+##﻿Public:
 1.	Hiển thị danh mục bài hát và bài hát mới
 2.	Hiển thị trang chủ
 3.	Hiển thị trang danh mục
 4.	Hiển thị trang chi tiết
 5.	Chức năng gửi liên hệ
 ----------------------------------------------
-Admin:
+##Admin:
 1.	Hiển thị giao diện admin
 2.	Hiện thị danh sách danh mục bài hát
 3.	Chức năng thêm danh mục bài hát
