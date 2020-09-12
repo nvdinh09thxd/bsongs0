@@ -29,6 +29,7 @@ public class RatingDao {
 		}
 		return result;
 	}
+
 	public int editItem(Rating objItem) {
 		int result = 0;
 		conn = DBConnectionUtil.getConnection();
@@ -45,6 +46,7 @@ public class RatingDao {
 		}
 		return result;
 	}
+
 	public boolean hasRaty(int idSong) {
 		conn = DBConnectionUtil.getConnection();
 		String sql = "SELECT * FROM rating WHERE id_song = ?";
@@ -62,6 +64,7 @@ public class RatingDao {
 		}
 		return false;
 	}
+
 	public float getRating(int idSong) {
 		conn = DBConnectionUtil.getConnection();
 		String sql = "SELECT rating FROM rating WHERE id_song = ?";
@@ -79,6 +82,7 @@ public class RatingDao {
 		}
 		return 0;
 	}
+
 	public static void main(String[] args) {
 		RatingDao a = new RatingDao();
 		System.out.println(a.getRating(12));

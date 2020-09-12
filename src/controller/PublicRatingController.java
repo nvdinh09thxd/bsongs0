@@ -31,7 +31,7 @@ public class PublicRatingController extends HttpServlet {
 		if (request.getParameter("ascore") != null) {
 			score = Float.parseFloat(request.getParameter("ascore"));
 		}
-		Rating item = new Rating(idSong, score, 0, null);
+		Rating item = new Rating(0, idSong, score, 0, null);
 		if (raty.hasRaty(idSong)) {// Nếu đã đánh giá trước đó thì cập nhật lại
 			if (raty.editItem(item) > 0) {
 				response.getWriter().println("Cám ơn bạn đã đánh giá!");

@@ -23,6 +23,6 @@
 <!-- <rule>
 /tim-kiem=a
     <from>/tim-kiem/(.*)+)</from>
-    <to>/detail?id=$2</to>
+    <to>/search?name=cho&x=17&y=16</to>
 </rule> -->
 </urlrewrite>

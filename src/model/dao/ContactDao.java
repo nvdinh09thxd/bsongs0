@@ -18,7 +18,7 @@ public class ContactDao {
 
 	public ArrayList<Contact> getItems() {
 		conn = DBConnectionUtil.getConnection();
-		ArrayList<Contact> ListItems = new ArrayList<>();
+		ArrayList<Contact> listItems = new ArrayList<>();
 		String sql = "SELECT * FROM contacts";
 		try {
 			st = conn.createStatement();
@@ -26,14 +26,14 @@ public class ContactDao {
 			while (rs.next()) {
 				Contact objItem = new Contact(rs.getInt("id"), rs.getString("name"), rs.getString("email"),
 						rs.getString("website"), rs.getString("message"));
-				ListItems.add(objItem);
+				listItems.add(objItem);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBConnectionUtil.close(rs, st, conn);
 		}
-		return ListItems;
+		return listItems;
 	}
 
 	public int delItem(int id) {

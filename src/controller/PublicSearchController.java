@@ -23,7 +23,7 @@ public class PublicSearchController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String name = request.getParameter("editbox_search");
+		String name = request.getParameter("name");
 		ArrayList<Song> listSongs = songDao.getItems(name);
 		request.setAttribute("songName", name);
 		request.setAttribute("numberOfPages", 1);

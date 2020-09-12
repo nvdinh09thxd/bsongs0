@@ -13,9 +13,9 @@
 	%>
   <form id="formsearch" name="formsearch" method="get" action="<%=request.getContextPath()%>/search">
     <span>
-    <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" placeholder="Tìm kiếm bài hát" value="<%if(songName!=null) out.print(songName); %>" type="text" />
+    <input name="name" class="editbox_search" id="editbox_search" maxlength="80" placeholder="Tìm kiếm bài hát" value="<%if(songName!=null) out.print(songName); %>" type="text" />
     </span>
-    <input name="button_search" src="<%=DefineUtil.URL_PUBLIC%>/images/search.jpg" class="button_search" type="image" />
+    <input src="<%=DefineUtil.URL_PUBLIC%>/images/search.jpg" class="button_search" type="image" />
   </form>
 </div>
 <div class="clr"></div>

@@ -18,21 +18,21 @@ public class CatDao {
 
 	public ArrayList<Category> getItems() {
 		conn = DBConnectionUtil.getConnection();
-		ArrayList<Category> ListItems = new ArrayList<>();
+		ArrayList<Category> listItems = new ArrayList<>();
 		String sql = "SELECT * FROM categories ORDER BY id";
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);
 			while (rs.next()) {
 				Category item = new Category(rs.getInt("id"), rs.getString("name"));
-				ListItems.add(item);
+				listItems.add(item);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBConnectionUtil.close(rs, st, conn);
 		}
-		return ListItems;
+		return listItems;
 	}
 
 	public int addItem(Category item) {

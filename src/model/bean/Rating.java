@@ -3,17 +3,18 @@ package model.bean;
 import java.sql.Timestamp;
 
 public class Rating {
+	int id;
 	int id_song;
 	float rating;
 	int count;
 	Timestamp date;
 
-	public Timestamp getDate() {
-		return date;
+	public int getId() {
+		return id;
 	}
 
-	public void setDate(Timestamp date) {
-		this.date = date;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getId_song() {
@@ -39,9 +40,18 @@ public class Rating {
 	public void setCount(int count) {
 		this.count = count;
 	}
-	
-	public Rating(int id_song, float rating, int count, Timestamp date) {
+
+	public Timestamp getDate() {
+		return date;
+	}
+
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
+
+	public Rating(int id, int id_song, float rating, int count, Timestamp date) {
 		super();
+		this.id = id;
 		this.id_song = id_song;
 		this.rating = rating;
 		this.count = count;

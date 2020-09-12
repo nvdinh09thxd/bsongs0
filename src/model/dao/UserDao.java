@@ -18,22 +18,22 @@ public class UserDao {
 
 	public ArrayList<User> getItems() {
 		conn = DBConnectionUtil.getConnection();
-		ArrayList<User> ListItems = new ArrayList<>();
-		String sql = "SELECT * FROM users ORDER BY id DESC";
+		ArrayList<User> listItems = new ArrayList<>();
+		String sql = "SELECT * FROM users ORDER BY id";
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);
 			while (rs.next()) {
 				User objItem = new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"),
 						rs.getString("fullname"));
-				ListItems.add(objItem);
+				listItems.add(objItem);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBConnectionUtil.close(rs, st, conn);
 		}
-		return ListItems;
+		return listItems;
 	}
 
 	public int addItem(User item) {
