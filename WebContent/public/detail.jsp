@@ -12,7 +12,7 @@
 		    RatingDao ratingDao = new RatingDao();
 		    float rating = 0;
 		  	Song itemSong = (Song) request.getAttribute("itemSong");
-		  	if(itemSong!=null){
+		  	if(itemSong != null){
 		  		rating =  ratingDao.getRating(itemSong.getId());
 		  		String songDate = new SimpleDateFormat("dd-MM-yyyy").format(itemSong.getDate_create());
   	%>
@@ -31,16 +31,15 @@
 		<%
 			@SuppressWarnings("unchecked")
 			ArrayList<Comment> listCmts = (ArrayList<Comment>) request.getAttribute("listCmts");
-			if(listCmts!=null && listCmts.size()>0){
-				for(Comment objCmt: listCmts){
-					if(objCmt.isActive()){
+			if(listCmts != null && listCmts.size() > 0) {
+				for(Comment objCmt: listCmts) {
 						String cmtDate = new SimpleDateFormat("dd-MM-yyyy").format(objCmt.getDate_create());
 		%>
 		<b><%=objCmt.getUsername() %>:</b>
 		<span><%=objCmt.getComment() %> -----</span>
 		<i><%=cmtDate %></i>
 		<br />
-		<%}}} %>
+		<%}} %>
 	</div>
     <form>
 			<input type="text" name="fullname" id="fullname" value="" placeholder="Nhập tên" />
@@ -59,12 +58,13 @@
       ArrayList<Song> relatedSong = (ArrayList<Song>) request.getAttribute("relatedSong");
       if(relatedSong != null && relatedSong.size() >0){
     	  for(Song item : relatedSong){
+    		  String urlSlug = request.getContextPath() + "/chi-tiet/" + StringUtil.makeSlug(item.getName()) + "-" + item.getId() + ".html";
       %>
       <div class="comment"> 
-	      <a href="<%=request.getContextPath()%>/detail?did=<%=item.getId() %>">
+	      <a href="<%=urlSlug %>">
 	      		<img src="<%=DefineUtil.URL_PICTURE%>/<%=item.getPicture() %>" width="40" height="40" alt="" class="userpic" />
 	      </a>
-          <h2><a href="<%=request.getContextPath()%>/detail?did=<%=item.getId() %>"><%=item.getName() %></a></h2>
+          <h2><a href="<%=urlSlug %>"><%=item.getName() %></a></h2>
         <p><%=item.getPreview_text() %></p>
       </div>
       <%}} %>

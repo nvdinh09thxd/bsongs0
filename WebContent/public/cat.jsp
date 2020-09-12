@@ -7,7 +7,7 @@
 	<div class="mainbar">
 		<%
 			Category category = (Category) request.getAttribute("category");
-	    	if(category!=null){
+	    	if(category != null){
 		%>
 		<div class="article">
 			<h1><%=category.getName()%></h1>
@@ -91,7 +91,7 @@
 	<div class="clr"></div>
 </div>
 <script>
-	<%if(category!=null){%>
+	<%if(category != null){%>
 		document.getElementById("<%=category.getId()%>").classList.add('active_cat');
 	<%}%>
 	document.getElementById("index").classList.add('active');

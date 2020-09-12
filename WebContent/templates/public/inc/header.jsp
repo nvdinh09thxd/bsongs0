@@ -24,7 +24,7 @@
       <div class="menu_nav">
         <ul>
           <li id="index"><a href="<%=request.getContextPath()%>/home"><span>Trang chủ</span></a>
-          <li id="contact"><a href="<%=request.getContextPath()%>/contact"><span>Liên hệ</span></a></li>
+          <li id="contact"><a href="<%=request.getContextPath()%>/lien-he.html"><span>Liên hệ</span></a></li>
           <li><a href="<%=request.getContextPath()%>/login"><span>Đăng nhập</span></a></li>
         </ul>
       </div>

@@ -38,10 +38,9 @@ Làm thêm
 1. chức năng tìm kiếm bài hát ở trang public
 2. chức năng tìm kiếm bài hát rồi sau đó ghi lại từ tìm kiếm vào ô tìm kiếm
 3. chức năng tìm kiếm, sau khi tìm xong thì in đậm từ cần tìm
-4. chức năng đánh giá bài hát, bình luận bài hát ở public
-5. chức năng hiển thị và active bình luận ở admin
-
-Chưa làm được:
-- Active các danh mục tin ở public
+4. chức năng đánh giá bài hát ở public
+5. chức năng bình luận bài hát ở public
+5. active các danh mục tin ở public
+6. chức năng hiển thị và active bình luận ở admin
 
 

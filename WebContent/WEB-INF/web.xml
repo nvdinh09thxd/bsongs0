@@ -204,7 +204,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicContactController</servlet-name>
-    <url-pattern>/contact</url-pattern>
+    <url-pattern>/contacts</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicSearchController</servlet-name>

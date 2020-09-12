@@ -9,7 +9,7 @@
   <%
   	@SuppressWarnings("unchecked")
   	ArrayList<Song> listSongs = (ArrayList<Song>) request.getAttribute("listSongs");
-	  	if(listSongs !=null && listSongs.size()>0){
+	  	if(listSongs != null && listSongs.size() > 0){
   		int i = 0;
   		for(Song objSong : listSongs){
   			i++;
@@ -37,16 +37,16 @@
     <%
 	    int numberOfPages = (Integer) request.getAttribute("numberOfPages");
 		int currentPage = (Integer) request.getAttribute("currentPage");
-		if(listSongs!=null && listSongs.size()>0 && numberOfPages > 1){
+		if(listSongs != null && listSongs.size() > 0 && numberOfPages > 1){
     %>
     <p class="pages"><small>Trang <%=currentPage %> của <%=numberOfPages %></small>
     <a href="<%=request.getContextPath()%>/home?page=<%=currentPage-1%>" style="<%if(currentPage==1) out.print("display: none");%>">&laquo;</a>
     <%
-	    for(int i=1; i<=numberOfPages; i++){
-	    	if(currentPage==i){
+	    for(int i = 1; i <= numberOfPages; i++){
+	    	if(currentPage == i){
     %>
     <span><%=i %></span>
-    <%}else{ %>
+    <%} else { %>
     <a href="<%=request.getContextPath()%>/home?page=<%=i%>"><%=i %></a>
     <%}} %>
     <a href="<%=request.getContextPath()%>/home?page=<%=currentPage+1%>" style="<%if(currentPage==numberOfPages) out.print("display: none");%>">&raquo;</a></p>

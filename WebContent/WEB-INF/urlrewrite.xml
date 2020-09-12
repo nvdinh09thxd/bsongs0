@@ -15,6 +15,11 @@
     <from>/chi-tiet/(.*)-([0-9]+).html</from>
     <to>/detail?did=$2</to>
 </rule>
+<rule>
+<!-- /lien-he.html -->
+    <from>/lien-he.html</from>
+    <to>/contacts</to>
+</rule>
 <!-- <rule>
 /tim-kiem=a
     <from>/tim-kiem/(.*)+)</from>

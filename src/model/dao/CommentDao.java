@@ -37,14 +37,14 @@ public class CommentDao {
 	public ArrayList<Comment> getItems(int idSong) {
 		conn = DBConnectionUtil.getConnection();
 		ArrayList<Comment> listItems = new ArrayList<>();
-		String sql = "SELECT * FROM comments WHERE id_song = ?";
+		String sql = "SELECT * FROM comments WHERE id_song = ? AND status > 0";
 		try {
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, idSong);
 			rs = pst.executeQuery();
 			while (rs.next()) {
 				Comment cmt = new Comment(rs.getInt("id"), rs.getInt("id_song"), rs.getString("username"),
-						rs.getString("comment"), rs.getTimestamp("date_create"), rs.getBoolean("active"));
+						rs.getString("comment"), rs.getTimestamp("date_create"), rs.getBoolean("status"));
 				listItems.add(cmt);
 			}
 		} catch (SQLException e) {
@@ -64,7 +64,7 @@ public class CommentDao {
 			rs = st.executeQuery(sql);
 			while (rs.next()) {
 				Comment cmt = new Comment(rs.getInt("id"), rs.getInt("id_song"), rs.getString("username"),
-						rs.getString("comment"), rs.getTimestamp("date_create"), rs.getBoolean("active"));
+						rs.getString("comment"), rs.getTimestamp("date_create"), rs.getBoolean("status"));
 				listItems.add(cmt);
 			}
 		} catch (SQLException e) {
@@ -94,10 +94,10 @@ public class CommentDao {
 	public int editItem(Comment item) {
 		int result = 0;
 		conn = DBConnectionUtil.getConnection();
-		String sql = "UPDATE comments SET active = ? WHERE id = ?";
+		String sql = "UPDATE comments SET status = ? WHERE id = ?";
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setBoolean(1, item.isActive());
+			pst.setBoolean(1, item.isStatus());
 			pst.setInt(2, item.getId());
 			result = pst.executeUpdate();
 		} catch (SQLException e) {

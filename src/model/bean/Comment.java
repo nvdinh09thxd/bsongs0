@@ -8,7 +8,7 @@ public class Comment {
 	String username;
 	String comment;
 	Timestamp date_create;
-	boolean active;
+	boolean status;
 
 	public int getId() {
 		return id;
@@ -16,14 +16,6 @@ public class Comment {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public Timestamp getDate_create() {
-		return date_create;
-	}
-
-	public void setDate_create(Timestamp date_create) {
-		this.date_create = date_create;
 	}
 
 	public int getId_song() {
@@ -50,22 +42,30 @@ public class Comment {
 		this.comment = comment;
 	}
 
-	public boolean isActive() {
-		return active;
+	public Timestamp getDate_create() {
+		return date_create;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
+	public void setDate_create(Timestamp date_create) {
+		this.date_create = date_create;
 	}
 
-	public Comment(int id, int id_song, String username, String comment, Timestamp date_create, boolean active) {
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public Comment(int id, int id_song, String username, String comment, Timestamp date_create, boolean status) {
 		super();
 		this.id = id;
 		this.id_song = id_song;
 		this.username = username;
 		this.comment = comment;
 		this.date_create = date_create;
-		this.active = active;
+		this.status = status;
 	}
 
 	public Comment() {
