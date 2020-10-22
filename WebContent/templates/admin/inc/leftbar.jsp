@@ -1,4 +1,4 @@
-<%@page import="model.bean.User"%>
+<%@page import="models.User"%>
 <%@page import="util.DefineUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>

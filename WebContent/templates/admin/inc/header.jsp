@@ -1,4 +1,4 @@
-<%@page import="model.bean.User"%>
+<%@page import="models.User"%>
 <%@page import="util.DefineUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
@@ -41,7 +41,7 @@
             	if(session.getAttribute("userLogin")!=null){
             		User userLogin = (User) session.getAttribute("userLogin");
             %>
-            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;"> Xin chào, <b><%=userLogin.getFullName() %></b> &nbsp; <a href="<%=request.getContextPath() %>/logout" class="btn btn-danger square-btn-adjust">Đăng xuất</a> </div>
+            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;"> Xin chào, <b><%=userLogin.getFullname() %></b> &nbsp; <a href="<%=request.getContextPath() %>/logout" class="btn btn-danger square-btn-adjust">Đăng xuất</a> </div>
             <%} else { %>
             <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;"> Xin chào, <b>Khách</b> &nbsp; <a href="<%=request.getContextPath() %>/login" class="btn btn-danger square-btn-adjust">Đăng nhập</a> </div>
             <%} %>

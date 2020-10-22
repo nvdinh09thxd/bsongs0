@@ -16,7 +16,7 @@
   </filter-mapping>
   <servlet>
     <servlet-name>AdminIndexController</servlet-name>
-    <servlet-class>controller.AdminIndexController</servlet-class>
+    <servlet-class>controllers.admins.AdminIndexController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminIndexController</servlet-name>
@@ -24,7 +24,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminIndexCatController</servlet-name>
-    <servlet-class>controller.AdminIndexCatController</servlet-class>
+    <servlet-class>controllers.admins.cat.AdminIndexCatController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminIndexCatController</servlet-name>
@@ -32,7 +32,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminAddCatController</servlet-name>
-    <servlet-class>controller.AdminAddCatController</servlet-class>
+    <servlet-class>controllers.admins.cat.AdminAddCatController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminAddCatController</servlet-name>
@@ -40,7 +40,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminDelCatController</servlet-name>
-    <servlet-class>controller.AdminDelCatController</servlet-class>
+    <servlet-class>controllers.admins.cat.AdminDelCatController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminDelCatController</servlet-name>
@@ -48,7 +48,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminEditCatController</servlet-name>
-    <servlet-class>controller.AdminEditCatController</servlet-class>
+    <servlet-class>controllers.admins.cat.AdminEditCatController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminEditCatController</servlet-name>
@@ -56,7 +56,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminIndexContactController</servlet-name>
-    <servlet-class>controller.AdminIndexContactController</servlet-class>
+    <servlet-class>controllers.admins.contact.AdminIndexContactController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminIndexContactController</servlet-name>
@@ -64,7 +64,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminDelContactController</servlet-name>
-    <servlet-class>controller.AdminDelContactController</servlet-class>
+    <servlet-class>controllers.admins.contact.AdminDelContactController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminDelContactController</servlet-name>
@@ -104,7 +104,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminIndexSongController</servlet-name>
-    <servlet-class>controller.AdminIndexSongController</servlet-class>
+    <servlet-class>controllers.admins.song.AdminIndexSongController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminIndexSongController</servlet-name>
@@ -112,7 +112,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminAddSongController</servlet-name>
-    <servlet-class>controller.AdminAddSongController</servlet-class>
+    <servlet-class>controllers.admins.song.AdminAddSongController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminAddSongController</servlet-name>
@@ -120,7 +120,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminEditSongController</servlet-name>
-    <servlet-class>controller.AdminEditSongController</servlet-class>
+    <servlet-class>controllers.admins.song.AdminEditSongController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminEditSongController</servlet-name>
@@ -128,7 +128,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminDelSongController</servlet-name>
-    <servlet-class>controller.AdminDelSongController</servlet-class>
+    <servlet-class>controllers.admins.song.AdminDelSongController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminDelSongController</servlet-name>
@@ -152,7 +152,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>LoginController</servlet-name>
-    <servlet-class>controller.LoginController</servlet-class>
+    <servlet-class>controllers.auth.LoginController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginController</servlet-name>
@@ -160,7 +160,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>LogoutController</servlet-name>
-    <servlet-class>controller.LogoutController</servlet-class>
+    <servlet-class>controllers.auth.LogoutController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LogoutController</servlet-name>
@@ -168,7 +168,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicIndexController</servlet-name>
-    <servlet-class>controller.PublicIndexController</servlet-class>
+    <servlet-class>controllers.publics.PublicIndexController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicIndexController</servlet-name>
@@ -176,7 +176,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicCatController</servlet-name>
-    <servlet-class>controller.PublicCatController</servlet-class>
+    <servlet-class>controllers.publics.PublicCatController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicCatController</servlet-name>
@@ -184,7 +184,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicDetailController</servlet-name>
-    <servlet-class>controller.PublicDetailController</servlet-class>
+    <servlet-class>controllers.publics.PublicDetailController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicDetailController</servlet-name>
@@ -192,7 +192,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicNotFoundController</servlet-name>
-    <servlet-class>controller.PublicNotFoundController</servlet-class>
+    <servlet-class>controllers.publics.PublicNotFoundController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicNotFoundController</servlet-name>
@@ -200,7 +200,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicContactController</servlet-name>
-    <servlet-class>controller.PublicContactController</servlet-class>
+    <servlet-class>controllers.publics.PublicContactController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicContactController</servlet-name>
@@ -208,7 +208,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicSearchController</servlet-name>
-    <servlet-class>controller.PublicSearchController</servlet-class>
+    <servlet-class>controllers.publics.PublicSearchController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicSearchController</servlet-name>
@@ -216,7 +216,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicRatingController</servlet-name>
-    <servlet-class>controller.PublicRatingController</servlet-class>
+    <servlet-class>controllers.publics.PublicRatingController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicRatingController</servlet-name>
@@ -224,7 +224,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>PublicCommentController</servlet-name>
-    <servlet-class>controller.PublicCommentController</servlet-class>
+    <servlet-class>controllers.publics.PublicCommentController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PublicCommentController</servlet-name>

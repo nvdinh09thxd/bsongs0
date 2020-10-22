@@ -1,9 +1,9 @@
+<%@page import="java.util.List"%>
 <%@page import="util.StringUtil"%>
-<%@page import="model.bean.Song"%>
-<%@page import="model.dao.SongDao"%>
-<%@page import="model.bean.Category"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="model.dao.CatDao"%>
+<%@page import="models.Song"%>
+<%@page import="daos.SongDao"%>
+<%@page import="models.Category"%>
+<%@page import="daos.CatDao"%>
 <%@page import="util.DefineUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
@@ -25,7 +25,7 @@
   <ul class="sb_menu">
   <%
   CatDao catDao = new CatDao();
-  ArrayList<Category> listCat = catDao.getItems();
+  List<Category> listCat = catDao.getItems();
   if(listCat.size()>0){
 	  for(Category objCat: listCat){
 		  String urlSlug = request.getContextPath() + "/danh-muc/"+ StringUtil.makeSlug(objCat.getName()) +"-"+objCat.getId();
@@ -43,13 +43,13 @@
   <ul class="ex_menu">
   <%
   SongDao songDao = new SongDao();
-  ArrayList<Song> recentSongs = songDao.getItems(6);
+  List<Song> recentSongs = songDao.getItems(6);
   if(recentSongs.size()>0){
 	  for(Song objSong: recentSongs){
 		  String urlSlug = request.getContextPath() + "/chi-tiet/" + StringUtil.makeSlug(objSong.getName()) + "-" + objSong.getId() + ".html";
   %>
     <li><a href="<%=urlSlug%>"><%=objSong.getName()%></a><br />
-      <%if(objSong.getPreview_text().length()>50) out.print(objSong.getPreview_text().substring(0, 50)+"..."); else out.print(objSong.getPreview_text()); %></li>
+      <%if(objSong.getDescription().length()>50) out.print(objSong.getDescription().substring(0, 50)+"..."); else out.print(objSong.getDescription()); %></li>
       <%}} %>
   </ul>
 </div>
