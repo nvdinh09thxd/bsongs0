@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import constants.GlobalConstant;
 import daos.SongDao;
 import models.Category;
 import models.Song;
@@ -69,8 +70,7 @@ public class AdminEditSongController extends HttpServlet {
 			return;
 		}
 		// xu ly upload file
-		String dirUpload = "files";
-		String fileName = FileUtil.uploadFile(request, "picture", dirUpload);
+		String fileName = FileUtil.uploadFile(request, "picture", GlobalConstant.DIR_UPLOAD);
 		if (fileName == "") {
 			fileName = song.getPicture();
 		}
@@ -82,7 +82,7 @@ public class AdminEditSongController extends HttpServlet {
 			// Nếu có chọn file và đã thực hiện thành công thì xóa file cũ đi
 			if (request.getPart("picture").getSubmittedFileName() != "") {
 				String appPath = request.getServletContext().getRealPath("");
-				String dirPath = appPath + dirUpload;
+				String dirPath = appPath + GlobalConstant.DIR_UPLOAD;
 				String oldPathFileName = dirPath + File.separator + song.getPicture();
 				File oldFile = new File(oldPathFileName);
 				if (oldFile.exists()) {
@@ -94,7 +94,7 @@ public class AdminEditSongController extends HttpServlet {
 			// Nếu có chọn file và không thành công thì xóa file đã upload lên
 			if (request.getPart("picture").getSubmittedFileName() != "") {
 				String appPath = request.getServletContext().getRealPath("");
-				String oldPathFileName = appPath + dirUpload + File.separator + fileName;
+				String oldPathFileName = appPath + GlobalConstant.DIR_UPLOAD + File.separator + fileName;
 				File oldFile = new File(oldPathFileName);
 				if (oldFile.exists()) {
 					oldFile.delete();

@@ -4,10 +4,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import constants.GlobalConstant;
 import models.Category;
 import models.Song;
 import util.DBConnectionUtil;
-import util.DefineUtil;
 
 public class SongDao extends AbstractDAO {
 
@@ -220,7 +220,7 @@ public class SongDao extends AbstractDAO {
 		try {
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, offset);
-			pst.setInt(2, DefineUtil.NUMBER_PER_PAGE);
+			pst.setInt(2, GlobalConstant.NUMBER_PER_PAGE);
 			rs = pst.executeQuery();
 			while (rs.next()) {
 				Song ObjItem = new Song(rs.getInt("id"), rs.getString("name"), rs.getString("preview_text"),
@@ -260,7 +260,7 @@ public class SongDao extends AbstractDAO {
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, idCat);
 			pst.setInt(2, offset);
-			pst.setInt(3, DefineUtil.NUMBER_PER_PAGE);
+			pst.setInt(3, GlobalConstant.NUMBER_PER_PAGE);
 			rs = pst.executeQuery();
 			while (rs.next()) {
 				Song ObjItem = new Song(rs.getInt("id"), rs.getString("name"), rs.getString("preview_text"),

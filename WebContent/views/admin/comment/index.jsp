@@ -56,7 +56,7 @@
                                         <td class="center"><%=objCmt.getComment() %></td>
                                         <td class="center">
 	                                        <a href="javascript: void(0)" title="">
-		                                        <img src="<%=DefineUtil.URL_ADMIN %>/display/<%if(objCmt.isStatus()) out.print("active.gif"); else out.print("deactive.gif");%>" alt="<%=objCmt.getId() %>"/>
+		                                        <img src="<%=GlobalConstant.URL_ADMIN %>/display/<%if(objCmt.isStatus()) out.print("active.gif"); else out.print("deactive.gif");%>" alt="<%=objCmt.getId() %>"/>
 	                                        </a>
                                         </td>
                                         <td class="center">

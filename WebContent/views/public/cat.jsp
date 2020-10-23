@@ -36,7 +36,7 @@
 			</p>
 			<div class="clr"></div>
 			<div class="img"><a href="<%=urlSlug%>" title="<%=objSong.getName() %>">
-				<img src="<%=DefineUtil.URL_PICTURE%>/<%=objSong.getPicture()%>"
+				<img src="<%=GlobalConstant.URL_PICTURE%>/<%=objSong.getPicture()%>"
 					width="177" height="213" alt="Không có hình ảnh" class="fl" /></a>
 			</div>
 			<div class="post_content">

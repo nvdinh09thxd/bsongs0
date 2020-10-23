@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import constants.GlobalConstant;
 import daos.SongDao;
 import models.Song;
 import util.AuthUtil;
-import util.DefineUtil;
 
 public class AdminIndexSongController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,7 +31,7 @@ public class AdminIndexSongController extends HttpServlet {
 		}
 
 		int numberOfItems = songDao.numberOfItems();
-		int numberOfPages = (int) Math.ceil((float) numberOfItems / DefineUtil.NUMBER_PER_PAGE);
+		int numberOfPages = (int) Math.ceil((float) numberOfItems / GlobalConstant.NUMBER_PER_PAGE);
 		int currentPage = 1;
 		try {
 			currentPage = Integer.parseInt(request.getParameter("page"));
@@ -40,7 +40,7 @@ public class AdminIndexSongController extends HttpServlet {
 		if (currentPage > numberOfPages || currentPage < 1) {
 			currentPage = 1;
 		}
-		int offset = (currentPage - 1) * DefineUtil.NUMBER_PER_PAGE;
+		int offset = (currentPage - 1) * GlobalConstant.NUMBER_PER_PAGE;
 		List<Song> listSongs = songDao.getItemPagination(offset);
 		request.setAttribute("listSongs", listSongs);
 		request.setAttribute("numberOfPages", numberOfPages);

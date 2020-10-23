@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import constants.GlobalConstant;
 import daos.CatDao;
 import daos.SongDao;
 import models.Category;
 import models.Song;
-import util.DefineUtil;
 
 public class PublicCatController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -46,11 +46,11 @@ public class PublicCatController extends HttpServlet {
 		} catch (Exception e) {
 		}
 		int numberOfItems = songDao.numberOfItems(idCat);
-		int numberOfPages = (int) Math.ceil((float) numberOfItems / DefineUtil.NUMBER_PER_PAGE);
+		int numberOfPages = (int) Math.ceil((float) numberOfItems / GlobalConstant.NUMBER_PER_PAGE);
 		if (currentPage > numberOfPages || currentPage < 1) {
 			currentPage = 1;
 		}
-		int offset = (currentPage - 1) * DefineUtil.NUMBER_PER_PAGE;
+		int offset = (currentPage - 1) * GlobalConstant.NUMBER_PER_PAGE;
 
 		List<Song> listSongs = songDao.getItemsByCategoryPagination(offset, idCat);
 		

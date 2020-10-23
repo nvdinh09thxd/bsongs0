@@ -1,8 +1,8 @@
-package controller;
+package controllers.admins.comment;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,9 +30,9 @@ public class AdminIndexCommentController extends HttpServlet {
 			return;
 		}
 		CommentDao cmtDao = new CommentDao();
-		ArrayList<Comment> listCmts = cmtDao.getItems();
+		List<Comment> listCmts = cmtDao.getItems();
 		request.setAttribute("listCmts", listCmts);
-		RequestDispatcher rd = request.getRequestDispatcher("/admin/comment/index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/comment/index.jsp");
 		rd.forward(request, response);
 	}
 

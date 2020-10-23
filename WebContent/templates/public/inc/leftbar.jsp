@@ -1,10 +1,10 @@
+<%@page import="constants.GlobalConstant"%>
 <%@page import="java.util.List"%>
 <%@page import="util.StringUtil"%>
 <%@page import="models.Song"%>
 <%@page import="daos.SongDao"%>
 <%@page import="models.Category"%>
 <%@page import="daos.CatDao"%>
-<%@page import="util.DefineUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <div class="searchform">
@@ -15,7 +15,7 @@
     <span>
     <input name="name" class="editbox_search" id="editbox_search" maxlength="80" placeholder="Tìm kiếm bài hát" value="<%if(songName!=null) out.print(songName); %>" type="text" />
     </span>
-    <input src="<%=DefineUtil.URL_PUBLIC%>/images/search.jpg" class="button_search" type="image" />
+    <input src="<%=GlobalConstant.URL_PUBLIC%>/images/search.jpg" class="button_search" type="image" />
   </form>
 </div>
 <div class="clr"></div>

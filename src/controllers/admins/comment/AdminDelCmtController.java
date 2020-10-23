@@ -1,4 +1,4 @@
-package controller;
+package controllers.admins.comment;
 
 import java.io.IOException;
 

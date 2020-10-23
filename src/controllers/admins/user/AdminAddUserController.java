@@ -1,4 +1,4 @@
-package controller;
+package controllers.admins.user;
 
 import java.io.IOException;
 
@@ -39,7 +39,7 @@ public class AdminAddUserController extends HttpServlet {
 			return;
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/admin/user/add.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/add.jsp");
 		rd.forward(request, response);
 	}
 
@@ -66,22 +66,22 @@ public class AdminAddUserController extends HttpServlet {
 		String fullname = request.getParameter("fullname");
 		//VALIDATE DỮ LIỆU
 		if("".equals(username)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/admin/user/add.jsp?msg=1");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/add.jsp?msg=1");
 			rd.forward(request, response);
 			return;
 		}
 		if("".equals(password)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/admin/user/add.jsp?msg=2");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/add.jsp?msg=2");
 			rd.forward(request, response);
 			return;
 		}
 		if("".equals(fullname)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/admin/user/add.jsp?msg=3");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/add.jsp?msg=3");
 			rd.forward(request, response);
 			return;
 		}
 		if(userDao.hasUser(username)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/admin/user/add.jsp?msg=4");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/add.jsp?msg=4");
 			rd.forward(request, response);
 			return;
 		}
@@ -91,7 +91,7 @@ public class AdminAddUserController extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/admin/users?msg=1");
 			return;
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("/admin/user/add.jsp?msg=0");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/add.jsp?msg=0");
 			rd.forward(request, response);
 			return;
 		}

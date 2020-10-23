@@ -1,7 +1,7 @@
-package controller;
+package controllers.admins.user;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,9 +27,9 @@ public class AdminIndexUserController extends HttpServlet {
 			return;
 		}
 		UserDao userDao = new UserDao();
-		ArrayList<User> listUsers = userDao.getItems();
+		List<User> listUsers = userDao.getItems();
 		request.setAttribute("listUsers", listUsers);
-		RequestDispatcher rd = request.getRequestDispatcher("/admin/user/index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/index.jsp");
 		rd.forward(request, response);
 	}
 

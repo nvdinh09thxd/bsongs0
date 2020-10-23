@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import constants.GlobalConstant;
 import daos.SongDao;
 import models.Category;
 import models.Song;
@@ -71,8 +72,7 @@ public class AdminAddSongController extends HttpServlet {
 			return;
 		}
 		// xu ly upload file
-		String dirUpload = "files";
-		String fileName = FileUtil.uploadFile(request, "picture", dirUpload);
+		String fileName = FileUtil.uploadFile(request, "picture", GlobalConstant.DIR_UPLOAD);
 		// 1. tao doi tuong sau do luu cac thuoc tinh vao doi tuong
 		// 2. viet phuong thuc insert table
 		Song itemSong = new Song(0, songName, description, detail, null, fileName, 0, new Category(catId, null));
@@ -84,7 +84,7 @@ public class AdminAddSongController extends HttpServlet {
 		} else {
 			// Nếu không thành công thì xóa ảnh vừa upload đi
 			String appPath = request.getServletContext().getRealPath("");
-			String oldPathFileName = appPath + dirUpload + File.separator + fileName;
+			String oldPathFileName = appPath + GlobalConstant.DIR_UPLOAD + File.separator + fileName;
 			File oldFile = new File(oldPathFileName);
 			if (oldFile.exists()) {
 				oldFile.delete();

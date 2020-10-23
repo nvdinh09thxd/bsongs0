@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import constants.GlobalConstant;
 import daos.SongDao;
 import models.Song;
 import util.AuthUtil;
@@ -35,11 +36,10 @@ public class AdminDelSongController extends HttpServlet {
 			return;
 		}
 		Song song = songDao.getItem(songId);
-		String dirUpload = "files";
 		if (songDao.delItem(songId) > 0) {
 			// Nếu xóa bài hát thành công thì cũng xóa ảnh đi
 			String appPath = request.getServletContext().getRealPath("");
-			String dirPath = appPath + dirUpload;
+			String dirPath = appPath + GlobalConstant.DIR_UPLOAD;
 			String oldPathFileName = dirPath + File.separator + song.getPicture();
 			File oldFile = new File(oldPathFileName);
 			if (oldFile.exists()) {

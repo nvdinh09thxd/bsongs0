@@ -1,3 +1,4 @@
+<%@page import="constants.GlobalConstant"%>
 <%@page import="java.util.List"%>
 <%@page import="daos.SongDao"%>
 <%@page import="models.Song"%>
@@ -83,9 +84,9 @@
                                         <%
                                         	if(!"".equals(picture)){
                                         %>
-											<img width="200px" height="200px" src="<%=DefineUtil.URL_PICTURE %>/<%=picture %>" alt="<%=picture %>"/>
+											<img width="200px" height="200px" src="<%=GlobalConstant.URL_PICTURE %>/<%=picture %>" alt="<%=picture %>"/>
                                         <%} else { %>
-                                        	<img width="200px" height="200px" src = "<%=DefineUtil.URL_ADMIN %>/display/nopicture.jpg" alt = "nopicture" />
+                                        	<img width="200px" height="200px" src = "<%=GlobalConstant.URL_ADMIN %>/display/nopicture.jpg" alt = "nopicture" />
                                         <%
                                         }
                                         %>

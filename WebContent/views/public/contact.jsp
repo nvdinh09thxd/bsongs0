@@ -55,7 +55,7 @@
 					<li><label for="message">Nội dung</label>
 					<textarea id="message" name="message" rows="8" cols="50"><% if (message != null) out.print(message); %></textarea></li>
 					<li><input type="image" name="imageField" id="imageField"
-						src="<%=DefineUtil.URL_PUBLIC%>/images/submit.gif" class="send" />
+						src="<%=GlobalConstant.URL_PUBLIC%>/images/submit.gif" class="send" />
 						<div class="clr"></div></li>
 				</ol>
 			</form>

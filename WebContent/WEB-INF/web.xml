@@ -72,7 +72,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminIndexUserController</servlet-name>
-    <servlet-class>controller.AdminIndexUserController</servlet-class>
+    <servlet-class>controllers.admins.user.AdminIndexUserController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminIndexUserController</servlet-name>
@@ -80,7 +80,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminAddUserController</servlet-name>
-    <servlet-class>controller.AdminAddUserController</servlet-class>
+    <servlet-class>controllers.admins.user.AdminAddUserController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminAddUserController</servlet-name>
@@ -88,7 +88,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminDelUserController</servlet-name>
-    <servlet-class>controller.AdminDelUserController</servlet-class>
+    <servlet-class>controllers.admins.user.AdminDelUserController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminDelUserController</servlet-name>
@@ -96,7 +96,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminEditUserController</servlet-name>
-    <servlet-class>controller.AdminEditUserController</servlet-class>
+    <servlet-class>controllers.admins.user.AdminEditUserController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminEditUserController</servlet-name>
@@ -136,7 +136,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminIndexCommentController</servlet-name>
-    <servlet-class>controller.AdminIndexCommentController</servlet-class>
+    <servlet-class>controllers.admins.comment.AdminIndexCommentController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminIndexCommentController</servlet-name>
@@ -144,7 +144,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AdminDelCmtController</servlet-name>
-    <servlet-class>controller.AdminDelCmtController</servlet-class>
+    <servlet-class>controllers.admins.comment.AdminDelCmtController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminDelCmtController</servlet-name>

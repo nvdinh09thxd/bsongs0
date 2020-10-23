@@ -1,4 +1,4 @@
-package controller;
+package controllers.admins.user;
 
 import java.io.IOException;
 

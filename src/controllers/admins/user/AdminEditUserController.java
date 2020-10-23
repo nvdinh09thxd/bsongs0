@@ -1,4 +1,4 @@
-package controller;
+package controllers.admins.user;
 
 import java.io.IOException;
 
@@ -42,7 +42,7 @@ public class AdminEditUserController extends HttpServlet {
 			User itemUser = userDao.getItem(id);
 			if (itemUser != null) {
 				request.setAttribute("itemUser", itemUser);
-				RequestDispatcher rd = request.getRequestDispatcher("/admin/user/edit.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp");
 				rd.forward(request, response);
 				return;
 			} else {
@@ -76,22 +76,22 @@ public class AdminEditUserController extends HttpServlet {
 			String fullname = request.getParameter("fullname");
 			//VALIDATE DỮ LIỆU
 			if ("".equals(username)) {
-				RequestDispatcher rd = request.getRequestDispatcher("/admin/user/edit.jsp?msg=1");
+				RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp?msg=1");
 				rd.forward(request, response);
 				return;
 			}
 			if ("".equals(password)) {
-				RequestDispatcher rd = request.getRequestDispatcher("/admin/user/edit.jsp?msg=2");
+				RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp?msg=2");
 				rd.forward(request, response);
 				return;
 			}
 			if ("".equals(fullname)) {
-				RequestDispatcher rd = request.getRequestDispatcher("/admin/user/edit.jsp?msg=3");
+				RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp?msg=3");
 				rd.forward(request, response);
 				return;
 			}
 			if (userDao.hasUser(username) && !userDao.getItem(id).getUsername().equals(username)) {
-				RequestDispatcher rd = request.getRequestDispatcher("/admin/user/edit.jsp?msg=4");
+				RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp?msg=4");
 				rd.forward(request, response);
 				return;
 			}
@@ -101,7 +101,7 @@ public class AdminEditUserController extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/admin/users?msg=2");
 				return;
 			} else {
-				RequestDispatcher rd = request.getRequestDispatcher("/admin/user/edit.jsp?msg=0");
+				RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/edit.jsp?msg=0");
 				rd.forward(request, response);
 			}
 		} else {
