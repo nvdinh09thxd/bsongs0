@@ -61,7 +61,7 @@ public class PublicContactController extends HttpServlet {
 		Contact item = new Contact(0, name, email, website, message);
 
 		if (contactDao.addItem(item) > 0) {
-			response.sendRedirect(request.getContextPath() + "/contact?msg=1");
+			response.sendRedirect(request.getContextPath() + "/contacts?msg=1");
 			return;
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/public/contact.jsp?msg=0");

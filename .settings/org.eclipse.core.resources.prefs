@@ -18,6 +18,7 @@ encoding//src/controllers/admins/user/AdminEditUserController.java=UTF-8
 encoding//src/controllers/admins/user/AdminIndexUserController.java=UTF-8
 encoding//src/controllers/auth/LoginController.java=UTF-8
 encoding//src/controllers/publics/PublicCommentController.java=UTF-8
+encoding//src/controllers/publics/PublicDetailController.java=UTF-8
 encoding//src/controllers/publics/PublicRatingController.java=UTF-8
 encoding//src/controllers/publics/PublicSearchController.java=UTF-8
 encoding//src/util/StringUtil.java=UTF-8

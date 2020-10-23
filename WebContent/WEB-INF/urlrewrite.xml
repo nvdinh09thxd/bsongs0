@@ -20,9 +20,4 @@
     <from>/lien-he.html</from>
     <to>/contacts</to>
 </rule>
-<!-- <rule>
-/tim-kiem=a
-    <from>/tim-kiem/(.*)+)</from>
-    <to>/search?name=cho&x=17&y=16</to>
-</rule> -->
 </urlrewrite>
