@@ -36,8 +36,12 @@
 			</p>
 			<div class="clr"></div>
 			<div class="img"><a href="<%=urlSlug%>" title="<%=objSong.getName() %>">
-				<img src="<%=GlobalConstant.URL_PICTURE%>/<%=objSong.getPicture()%>"
-					width="177" height="213" alt="Không có hình ảnh" class="fl" /></a>
+			<%if(!"".equals(objSong.getPicture())){%>
+		      <img src="<%=GlobalConstant.DIR_UPLOAD%>/<%=objSong.getPicture() %>" alt="Không có hình ảnh" width="177" height="213" class="fl" />
+		      <%}else{%>
+		      <img src="<%=GlobalConstant.DIR_UPLOAD%>/nopicture.jpg" alt="Không có hình ảnh" width="177" height="213" class="fl" />
+		      <%}%>
+			</a>
 			</div>
 			<div class="post_content">
 				<p><%=objSong.getDescription()%></p>
