@@ -4,6 +4,11 @@
   <welcome-file-list>
     <welcome-file>index</welcome-file>
   </welcome-file-list>
+  <error-page>
+    	<!-- Missing login -->
+    	<error-code>404</error-code>
+    	<location>/views/error/404.jsp</location>
+	</error-page>
   <filter>
     <filter-name>UrlRewriteFilter</filter-name>
     <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>

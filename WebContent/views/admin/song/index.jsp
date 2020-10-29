@@ -84,7 +84,7 @@
                                         <%
                                         	if(!"".equals(picture)){
                                         %>
-											<img width="200px" height="200px" src="<%=GlobalConstant.URL_PICTURE %>/<%=picture %>" alt="<%=picture %>"/>
+											<img width="200px" height="200px" src="<%=GlobalConstant.DIR_UPLOAD %>/<%=picture %>" alt="<%=picture %>"/>
                                         <%} else { %>
                                         	<img width="200px" height="200px" src = "<%=GlobalConstant.URL_ADMIN %>/display/nopicture.jpg" alt = "nopicture" />
                                         <%

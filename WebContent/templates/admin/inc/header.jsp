@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AdminCP | VinaEnter Edu</title>
     <!-- Icon -->
-    <link rel="icon" type="image/png" href="<%=GlobalConstant.URL_PICTURE %>/icon.jpg"/>
+    <link rel="icon" type="image/png" href="<%=GlobalConstant.DIR_UPLOAD %>/icon.jpg"/>
     <!-- BOOTSTRAP STYLES-->
     <link href="<%=GlobalConstant.URL_ADMIN%>/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
