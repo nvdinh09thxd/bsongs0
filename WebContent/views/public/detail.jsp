@@ -99,7 +99,7 @@
 			cancelPlace: 'left',
 			half: true,
 			start: <%=rating%>,
-			path:"/imgs/",
+			path:"/bsongs/imgs/",
 		});
 	});
 	
