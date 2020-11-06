@@ -62,7 +62,7 @@
       %>
       <div class="comment"> 
 	      <a href="<%=urlSlug %>">
-	      		<img src="<%=GlobalConstant.DIR_UPLOAD%>/<%=item.getPicture() %>" width="40" height="40" alt="" class="userpic" />
+	      		<img src="<%=GlobalConstant.URL_PICTURE%>/<%=item.getPicture() %>" width="40" height="40" alt="" class="userpic" />
 	      </a>
           <h2><a href="<%=urlSlug %>"><%=item.getName() %></a></h2>
         <p><%=item.getDescription() %></p>

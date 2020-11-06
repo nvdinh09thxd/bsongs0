@@ -80,7 +80,7 @@
                                         <label for="picture">Hình ảnh</label>
                                         <input type="file" name="picture" />
                                         <%if(!"".equals(picture)){ %>
-                                        <img width="200px" height="200px" src="<%=GlobalConstant.DIR_UPLOAD %>/<%=picture %>" alt="Không có hình ảnh" />
+                                        <img width="200px" height="200px" src="<%=GlobalConstant.URL_PICTURE %>/<%=picture %>" alt="Không có hình ảnh" />
                                         <%} %>
                                     </div>
                                     <div class="form-group">

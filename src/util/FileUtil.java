@@ -45,7 +45,7 @@ public class FileUtil {
 			String dirPath = appPath + dirUpload;
 			File saveDir = new File(dirPath);
 			if (!saveDir.exists()) {
-				saveDir.mkdir();// neu co s thi co the kiem tra nhieu thu muc, ve nha tim hieu them
+				saveDir.mkdir();
 			}
 			String filePath = dirPath + File.separator + fileName;
 			filePart.write(filePath);
