@@ -239,9 +239,17 @@ public class SongDao extends AbstractDAO {
 	public int delItem(int songId) {
 		int result = 0;
 		con = DBConnectionUtil.getConnection();
-		String sql = "DELETE FROM songs WHERE id = ?";
+		String sqlSong = "DELETE FROM songs WHERE id = ?";
+		String sqlCmt = "DELETE FROM comments WHERE id_song = ?";
+		String sqlRating = "DELETE FROM rating WHERE id_song = ?";
 		try {
-			pst = con.prepareStatement(sql);
+			pst = con.prepareStatement(sqlSong);
+			pst.setInt(1, songId);
+			pst.executeUpdate();
+			pst = con.prepareStatement(sqlCmt);
+			pst.setInt(1, songId);
+			pst.executeUpdate();
+			pst = con.prepareStatement(sqlRating);
 			pst.setInt(1, songId);
 			result = pst.executeUpdate();
 		} catch (SQLException e) {
