@@ -39,7 +39,7 @@
                                         <th>ID</th>
                                         <th>Username</th>
                                         <th>Comment</th>
-                                        <th>Active</th>
+                                        <th>Status</th>
                                         <th width="160px">Chức năng</th>
                                     </tr>
                                 </thead>
@@ -49,6 +49,7 @@
 	                                	ArrayList<Comment> listCmts = (ArrayList<Comment>) request.getAttribute("listCmts");
 	                                	if(listCmts!=null && listCmts.size()>0){
 	                                		for(Comment objCmt : listCmts){
+	                                			String picture = objCmt.isStatus()?"active.gif":"deactive.gif";
                                 %>
                                     <tr>
                                         <td><%=objCmt.getId() %></td>
@@ -56,7 +57,7 @@
                                         <td class="center"><%=objCmt.getComment() %></td>
                                         <td class="center">
 	                                        <a href="javascript: void(0)" title="">
-		                                        <img src="<%=GlobalConstant.URL_ADMIN %>/display/<%if(objCmt.isStatus()) out.print("active.gif"); else out.print("deactive.gif");%>" alt="<%=objCmt.getId() %>"/>
+		                                        <img src="<%=GlobalConstant.URL_ADMIN %>/display/<%=picture%>" alt="<%=objCmt.getId() %>" />
 	                                        </a>
                                         </td>
                                         <td class="center">
