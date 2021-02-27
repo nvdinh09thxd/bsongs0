@@ -41,7 +41,7 @@ public class RatingDao extends AbstractDAO {
 		return result;
 	}
 
-	public boolean hasRaty(int idSong) {
+	public boolean hasRating(int idSong) {
 		con = DBConnectionUtil.getConnection();
 		String sql = "SELECT * FROM rating WHERE id_song = ?";
 		try {

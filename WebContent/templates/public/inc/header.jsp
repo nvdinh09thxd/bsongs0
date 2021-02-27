@@ -6,7 +6,7 @@
 <head>
 <title>BSong</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="icon" type="image/png" href="<%=GlobalConstant.DIR_UPLOAD %>/icon.jpg"/>
+<link rel="icon" type="image/png" href="<%=GlobalConstant.URL_PICTURE %>/icon.jpg"/>
 <link href="<%=GlobalConstant.URL_PUBLIC %>/css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="<%=GlobalConstant.URL_PUBLIC %>/css/coin-slider.css" />
 <script type="text/javascript" src="<%=GlobalConstant.URL_PUBLIC %>/js/jquery-3.2.1.js"></script>
