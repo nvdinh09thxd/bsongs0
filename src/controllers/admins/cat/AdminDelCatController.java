@@ -31,8 +31,9 @@ public class AdminDelCatController extends HttpServlet {
 			return;
 		}
 		CatDao catDao = new CatDao();
-		if (catDao.delItem(catId) > 0) {
-			response.sendRedirect(request.getContextPath() + "/admin/cats?msg=3");
+		int catIdDel = catDao.delItem(catId);
+		if (catIdDel > 0) {
+			response.sendRedirect(request.getContextPath() + "/admin/cats?msg=3&cat_id_del=" + catIdDel);
 			return;
 		} else {
 			response.sendRedirect(request.getContextPath() + "/admin/cats?msg=0");

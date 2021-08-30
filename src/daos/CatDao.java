@@ -35,7 +35,13 @@ public class CatDao extends AbstractDAO {
 		try {
 			pst = con.prepareStatement(sql);
 			pst.setString(1, item.getName());
-			result = pst.executeUpdate();
+			pst.executeUpdate();
+			String sqlResult = "SELECT id FROM categories ORDER BY id DESC LIMIT 1";
+			st = con.createStatement();
+			rs = st.executeQuery(sqlResult);
+			if (rs.next()) {
+				result = rs.getInt("id");
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -51,7 +57,8 @@ public class CatDao extends AbstractDAO {
 		try {
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, catId);
-			result = pst.executeUpdate();
+			pst.executeUpdate();
+			result = catId;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -87,7 +94,8 @@ public class CatDao extends AbstractDAO {
 			pst = con.prepareStatement(sql);
 			pst.setString(1, item.getName());
 			pst.setInt(2, item.getId());
-			result = pst.executeUpdate();
+			pst.executeUpdate();
+			result = item.getId();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

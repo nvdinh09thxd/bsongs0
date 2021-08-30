@@ -41,8 +41,9 @@ public class AdminAddCatController extends HttpServlet {
 		String name = request.getParameter("name");
 		Category itemCat = new Category(0, name);
 		// Nếu thêm thành công thì chuyển hướng sang trang index cat
-		if (catDao.addItem(itemCat) > 0) {
-			response.sendRedirect(request.getContextPath() + "/admin/cats?msg=1");
+		int catIdNew = catDao.addItem(itemCat);
+		if (catIdNew > 0) {
+			response.sendRedirect(request.getContextPath() + "/admin/cats?msg=1&cat_id_new="+catIdNew);
 			return;
 		} else {
 			// Nếu không thành công thì chuyển tiếp sang trang add cat

@@ -53,8 +53,9 @@ public class AdminEditCatController extends HttpServlet {
 		int catId = Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
 		Category itemCat = new Category(catId, name);
-		if (catDao.editItem(itemCat) > 0) {
-			response.sendRedirect(request.getContextPath() + "/admin/cats?msg=2");
+		int catIdEdit = catDao.editItem(itemCat);
+		if (catIdEdit > 0) {
+			response.sendRedirect(request.getContextPath() + "/admin/cats?msg=2&cat_id_edit="+catIdEdit);
 			return;
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/admin/cat/edit.jsp?msg=0");
