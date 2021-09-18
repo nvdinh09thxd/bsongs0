@@ -164,7 +164,7 @@ public class SongDao extends AbstractDAO {
 
 	public void increaseView(int idSong) {
 		con = DBConnectionUtil.getConnection();
-		String sql = "UPDATE songs SET  counter = counter + 1 WHERE id = ?";
+		String sql = "UPDATE songs SET  counter = counter + 1, data_create = data_create WHERE id = ?";
 		try {
 			pst = con.prepareStatement(sql);
 			pst.setInt(1, idSong);

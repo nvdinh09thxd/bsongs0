@@ -1,7 +1,5 @@
 <%@page import="models.Comment"%>
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="daos.RatingDao"%>
-<%@page import="models.Song"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ include file="/templates/public/inc/header.jsp" %>
@@ -99,7 +97,7 @@
 			cancelPlace: 'left',
 			half: true,
 			start: <%=rating%>,
-			path:"/bsongs/imgs/",
+			path:"/bsongs/templates/public/imgs/",
 		});
 	});
 	
