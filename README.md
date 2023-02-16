@@ -1,4 +1,4 @@
-##﻿ Public:
+## Public:
 1.	Hiển thị danh mục bài hát và bài hát mới
 2.	Hiển thị trang chủ
 3.	Hiển thị trang danh mục
